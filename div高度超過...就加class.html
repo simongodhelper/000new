@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>div高度超過...就加class</title>
+    <style>
+        .mystyle {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="element">
+        123<br>
+        123<br>
+        123<br>
+        123<br>
+        123<br>
+        123<br>
+        123<br>
+        123<br>
+        123<br>
+        123<br>
+    </div>
+    <div style="http://api.thumbr.it/whitenoise-361x370.png"></div>
+
+    <script type="text/javascript">
+        var innerHeight = document.getElementById('element').offsetHeight;
+        // alert(innerHeight);
+        if (innerHeight > 150) {
+            element.classList.add("mystyle");
+        }
+    </script>
+</body>
+
+</html>

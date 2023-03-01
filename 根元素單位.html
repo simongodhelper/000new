@@ -1,0 +1,119 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="oxxo.studio">
+        <meta name="copyright" content="oxxo.studio">
+        <title>根元素單位</title>
+        <style>
+      html{
+          font-size:16px;
+      }
+
+      html * {
+          font-size: 1rem;
+      }
+      /*把defalt字體16px設為1rem*/
+      .border div{
+        border: #ccc solid 1px;
+        padding: 4px;
+      }
+      .box{
+        background: blueviolet;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 1rem;
+      }
+      .box div{
+        background: red;
+      }
+        </style>
+    </head>
+    <body>
+        <pre>
+            https://www.oxxostudio.tw/articles/201809/css-font-size.html
+    根元素16px
+      html{
+        font-size:16px;
+      }
+
+      html * {
+          font-size: 1rem;
+      }
+        </pre>
+        <div>
+            <p>16px</p>
+            <p style="font-size: 1rem;">1rem</p>
+            <p style="font-size: 2rem;">2rem</p>
+        </div>
+        <br>
+        <p>em 是相對單位，為每個子元素透過「倍數」乘以父元素的 px 值</p>
+        <div class="border">
+            <div style="font-size:1.2em;">
+                1.2em
+                <div style="font-size:1.2em;">
+                    1.2em
+                    <div style="font-size:1.2em;">
+                        1.2em
+                        <div>
+                            1em
+                            <div style="font-size:1.2em;">1.2em</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <p>rem 是相對單位，為每個元素透過「倍數」乘以根元素的 px 值</p>
+        <div class="border">
+            <div style="font-size:1.2rem;">
+                1.2rem
+                <div style="font-size:1.2rem;">
+                    1.2rem
+                    <div style="font-size:1.2rem;">
+                        1.2rem
+                        <div style="font-size:1.2rem;">
+                            1.2rem
+                            <div style="font-size:1.2rem;">1.2rem</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="border">
+            <p>small、medium、large...等</p>
+            <p>根據 W3C 的規範，以 medium 預設 16px 為基礎 ( 若 html 字體預設大小改變，medium 也會跟著變 )，</p>
+            <div style="font-size:xx-small;">
+                xx-small
+                <div style="font-size:x-small;">
+                    x-small
+                    <div style="font-size:small;">
+                        small
+                        <div style="font-size:medium;">
+                            medium
+                            <div style="font-size:large;">
+                                large
+                                <div style="font-size:x-large;">
+                                    x-large
+                                    <div style="font-size:xx-large;">xx-large</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>grid</p>
+        <div class="box">
+            <div>111111</div>
+            <div>22222</div>
+            <div>33333</div>
+            <div>44444</div>
+        </div>
+        <br>
+        <div class="box">
+            <div class="item1">Ａ</div>
+            <div class="item2">B</div>
+        </div>
+    </body>
+</html>

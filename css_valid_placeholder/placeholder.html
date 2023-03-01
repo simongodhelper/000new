@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <style>
+        .input-placeholder {
+            position: relative;
+        }
+        
+        .input-placeholder input {
+            padding: 2px;
+        }
+        
+        .input-placeholder input:valid+.placeholder {
+            display: none;
+        }
+        
+        .placeholder {
+            position: absolute;
+            pointer-events: none;
+            top: 2px;
+            bottom: 2px;
+            left: 6px;
+            margin: auto;
+            color: #ccc;
+        }
+        
+        .placeholder span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="input-placeholder">
+        <input type="text" required="">
+        <div class="placeholder">
+            Name<span>*</span>
+        </div>
+    </div>
+
+    <div class="input-placeholder">
+        <input type="text" required="">
+        <div class="placeholder">
+            Name<span>*</span>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

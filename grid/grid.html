@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="oxxo.studio">
+	<meta name="copyright" content="oxxo.studio">
+	<title>grid布局</title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			--pad: clamp(1rem, 2vw, 3rem);
+			--pad-sm: calc(var(--pad) / 2);
+			--pad-xs: calc(var(--pad) / 4);
+			margin: 0;
+			padding: var(--pad);
+			font-family: 'Exo 2', sans-serif;
+			font-size: clamp(1rem, 1rem + 0.25vw, 2rem);
+			line-height: 1.4;
+		}
+
+		h2,
+		blockquote,
+		p {
+			margin: 0;
+		}
+
+		h2 {
+			font-size: clamp(2.5rem, 1rem + 4vw, 5.5rem);
+			line-height: 1.1;
+			z-index: 1;
+			font-weight: 800;
+		}
+
+		blockquote {
+			font-size: clamp(1.2rem, 1rem + 1.5vw, 2.25rem);
+			font-weight: 800;
+			line-height: 1.1;
+			z-index: 1;
+			align-self: start;
+		}
+
+		blockquote::before {
+			content: '“';
+			font-size: 180%;
+			line-height: 1;
+		}
+
+		blockquote p {
+			margin-top: -1rem;
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			aspect-ratio: 16 / 9;
+			filter: grayscale(100%) brightness(1.35) contrast(0.6);
+		}
+
+		.grid {
+			display: grid;
+			gap: var(--pad);
+			max-width: 100rem;
+			margin: 0 auto;
+		}
+
+		.grid__img {
+			position: relative;
+			border-radius: var(--pad);
+			overflow: hidden;
+		}
+
+		.grid__img::after {
+			content: '';
+			position: absolute;
+			background: darkorchid;
+			inset: 0;
+			opacity: 0.8;
+			mix-blend-mode: screen;
+		}
+
+		@media (min-width: 45em) {
+			.grid {
+				grid-template-columns: 1fr repeat(10, minmax(3rem, 1fr)) 1fr;
+				grid-template-rows:
+					minmax(3rem, auto) 3rem auto 6rem auto;
+			}
+
+			.grid::after {
+				content: '';
+				grid-column: 1 / -3;
+				grid-row: 3;
+				border-top: 0.45rem solid;
+				z-index: 1;
+			}
+
+			h2 {
+				grid-column: 1 / span 8;
+				grid-row: 1 / span 2;
+			}
+
+			.grid__img {
+				grid-column: 6 / -1;
+				grid-row: 2 / span 3;
+				border: 0.4rem solid darkorchid;
+			}
+
+			blockquote {
+				grid-column: 3 / span 4;
+				grid-row: 4 / span 2;
+				background: deeppink;
+				padding: var(--pad);
+				border-radius: var(--pad);
+				border: 0.4rem solid;
+			}
+
+			p {
+				grid-column: 7 / span 5;
+				grid-row: 5 / span 1;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<img data-src="img/60dayschecksheet_01.jpg" src="img/60dayschecksheet_01.jpg" width="950" height="216"
+		loading="lazy" class="lazyloaded mainimg" alt="60天打造健康紀錄表">
+	<div class="grid">
+		<h2>Powering the renewable energy revolution</h2>
+		<div class="grid__img">
+			<img src="https://images.unsplash.com/photo-1503612450362-6f27ae232d57?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTIxODk1NDg&ixlib=rb-1.2.1&q=80&w=400"
+				alt="">
+		</div>
+		<blockquote>
+			<p>A strong renewable energy industry is good for our environment and our economy.</p>
+		</blockquote>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+			magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+			commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+			pariatur.
+			Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+			laborum.</p>
+	</div>
+</body>
+
+</html>

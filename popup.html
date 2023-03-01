@@ -1,0 +1,77 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="oxxo.studio">
+    <meta name="copyright" content="oxxo.studio">
+    <title>i++</title>
+    <style>
+        /* 兼容到IE9+ */
+        .cw-dialog {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            border: solid;
+            z-index: 19;
+        }
+
+        .cw-dialog:not([open]) {
+            display: none;
+        }
+
+        /* fit-content渐进增强实现 */
+        @supports (height: fit-content) {
+            .cw-dialog {
+                width: fit-content;
+                height: fit-content;
+                left: 0;
+                top: 1em;
+                right: 0;
+                bottom: 1em;
+                margin: auto;
+                /* 小动画 */
+                animation: tinyUp .2s both;
+            }
+        }
+
+        @keyframes tinyUp {
+            from {
+                transform: translateY(5px);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        /* CSS Container Queries*/
+
+        .container {
+            container-type: inline-size;
+            background: red;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <button id="button">点击我出现弹框</button>
+    <div id="dialog" class="cw-dialog">
+        <img src="https://demo.cssworld.cn/images/common/1.jpg" width="300" height="225">
+    </div>
+    <div class="container">123</div>
+    <script>
+        document.addEventListener('click', function (event) {
+            if (event.target && event.target.id == 'button') {
+                dialog.setAttribute('open', '');
+            } else {
+                dialog.removeAttribute('open');
+            }
+        });
+    </script>
+</body>
+
+</html>

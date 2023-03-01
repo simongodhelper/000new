@@ -1,0 +1,50 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="oxxo.studio">
+    <meta name="copyright" content="oxxo.studio">
+    <title>i++</title>
+    <style>
+        div {
+            padding: 4px;
+            border: #ccc solid 1px;
+        }
+
+        label {
+            background: rgb(122, 122, 122);
+            padding: 4px;
+            color: #fff;
+        }
+
+        .active {
+            background: red;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div>
+        <label for="" class="active">111</label>
+        <label for="">222</label>
+        <label for="">333</label>
+        <label for="">444</label>
+        <label for="">555</label>
+    </div>
+    <script>
+        let label = document.querySelectorAll('label');
+        for (let i = 0; i < label.length; i++) {
+            label[i].onclick = function () {
+                let j = 0;
+                while (j < label.length) {
+                    label[j++].className = '';
+                }
+                label[i].className = 'active';
+            }
+        }
+    </script>
+</body>
+
+</html>

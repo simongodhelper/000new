@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+  </script>
+<script>
+  $(document).ready(function(){
+    $(".btn1").click(function(){
+      $(".div1").hide();
+    });
+    $(".btn2").click(function(){
+      $(".div1").show();
+    });
+  });
+  </script>
+<style>
+.div1{
+  background: #ff1155;
+  display: none;
+}
+img.a {
+  width: 200px;
+  height: 400px;
+  object-fit: none;
+  object-position: 0 0;
+  border: 5px solid red;
+}
+.tag1{
+    position: absolute;
+    background: #ff1155;
+    width: 70px;
+    padding: 11px 0 11px 0;
+    text-align: center;
+    color: #fff;
+    top: -1px;
+    right: 20px;
+    z-index: 1;
+    font-size: 15px;
+    font-weight: bold;
+}
+.tag1:before{
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: -18px;
+    width: 70px;
+    height: 18px;
+    clip-path: polygon(50% 0, 100% 34%, 100% 0, 0 0, 0 34%);
+    background: #ff1155;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .tag1{
+        width: auto;
+        padding: 9px 20px;
+        font-size: 17px;
+        font-weight: normal;
+        top: 20px;
+        right: -2px;
+    }
+    .tag1:before{
+        left: -15px;
+        bottom: inherit;
+        top: 0;
+        width: 15px;
+        height: 40px;
+        clip-path: polygon(100% 50%, 50% 100%, 100% 100%, 100% 0, 50% 0);
+    }
+}
+</style>
+</head>
+<body>
+  <div class="div1">123</div>
+  <button class="btn1">隐藏</button>
+  <button class="btn2">显示</button>
+<img class="a" src="https://www.w3schools.com/cssref/paris.jpg" alt="Paris" width="400" height="300">
+
+<h2>Original image:</h2>
+<img src="https://www.w3schools.com/cssref/paris.jpg" alt="Paris" width="400" height="300">
+
+<div class="tag1"></div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <script type="text/javascript">
+        function toggle(source) {
+            var aInputs = document.getElementsByTagName('input');
+            for (var i = 0; i < aInputs.length; i++) {
+                if (aInputs[i] != source && aInputs[i].className == source.className) {
+                    aInputs[i].checked = source.checked;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type='checkbox' class='checkall' onClick='toggle(this)' /><br />
+    <input type='checkbox' class='checkall' /><br />
+    <input type='checkbox' class='checkall' /><br />
+    <input type='checkbox' class='checkall' /><br />
+    <input type='checkbox' class='checkall' /><br />
+    <input type='checkbox' class='checkall' /><br />
+</body>
+
+</html>

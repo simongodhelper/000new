@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<title>inset</title>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+    #myDIV {
+        width: 500px;
+        height: 300px;
+        position: relative;
+        background: #ccc;
+    }
+
+    .bluediv {
+        position: absolute;
+        background-color: lightblue;
+        inset: 50px;
+    }
+
+    .lefttop {
+        position: absolute;
+        inset: -5px;
+        width: 10px;
+        height: 10px;
+        background: red;
+    }
+</style>
+
+<body>
+    <div style="position: relative; padding: 20px; background: #ccc;">
+        <div class="lefttop"></div>
+    </div>
+    <br>
+    <p>https://www.w3schools.com/cssref/playdemo.php?filename=playcss_inset</p>
+
+    <div id="myDIV">
+        <div class="bluediv" style="inset: -10px 30px 10px 400px; height: 50px;">
+            See this blue div element with different inset values.
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>

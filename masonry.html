@@ -1,0 +1,876 @@
+<html lang="en-US" class=" lab-theme-dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script>var showAds = false;</script>
+    <link rel="stylesheet" href="https://w3bits.com/wp-content/themes/w/labs.css">
+    <script>var NOAB = (function () { return { error: function (t) { console.log("Error"); const scriptUrl = 'https://cdn.carbonads.com/carbon.js?serve=CK7DEKQ7&placement=w3bitscom'; loadScript(scriptUrl, document.querySelector("#_gads"), '_carbonads_js', document.querySelector("#_gads"), document.querySelector("#_gads_html"), document.querySelector("#_gads_inline")); }, success: function (t) { console.log("Success"); } }; })(); const loadScript = (source, beforeEl, id = null, removeEl = null, removeHTML = null, removeJS = null, removeCSS = null, async = true, defer = true) => { return new Promise((resolve, reject) => { let script = document.createElement('script'); const prior = beforeEl || document.getElementsByTagName('script')[0]; script.async = async; script.defer = defer; if (id) script.id = id; function onloadHander(_, isAbort) { if (isAbort || !script.readyState || /loaded|complete/.test(script.readyState)) { script.onload = null; script.onreadystatechange = null; script = undefined; if (isAbort) { reject(); } else { if (removeEl) removeEl.parentNode.removeChild(removeEl); if (removeHTML) removeHTML.parentNode.removeChild(removeHTML); if (removeJS) removeJS.parentNode.removeChild(removeJS); if (removeCSS) removeCSS.parentNode.removeChild(removeCSS); resolve(); } } } script.onload = onloadHander; script.onreadystatechange = onloadHander; script.src = source; prior.parentNode.insertBefore(script, prior); }); }</script>
+    <script>
+        var script = function (src) {
+            var e = document.createElement('script');
+            e.async = true;
+            e.src = src;
+            document.getElementsByTagName('head')[0].appendChild(e);
+        };
+
+        script("//s3.buysellads.com/ac/bsa.js");</script>
+    <script async="" src="//s3.buysellads.com/ac/bsa.js"></script>
+    <!-- This site is optimized with the Yoast SEO plugin v17.2.1 - https://yoast.com/wordpress/plugins/seo/ -->
+    <title>Live Demo of Perfect Horizontal Masonry With CSS Grid</title>
+    <meta name="description"
+        content="A practical left-to-right masonry created using CSS Grid module and a tiny bit of JavaScript. It is totally responsive and fits well on any screen-size.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://w3bits.com/labs/css-grid-masonry-js/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Live Demo of Perfect Horizontal Masonry With CSS Grid">
+    <meta property="og:description"
+        content="A practical left-to-right masonry created using CSS Grid module and a tiny bit of JavaScript. It is totally responsive and fits well on any screen-size.">
+    <meta property="og:url" content="https://w3bits.com/labs/css-grid-masonry-js/">
+    <meta property="og:site_name" content="W3Bits">
+    <meta property="article:modified_time" content="2021-10-04T11:40:59+00:00">
+    <meta property="og:image" content="//picsum.photos/450/325?image=100">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@w3bits_">
+    <meta name="twitter:label1" content="Est. reading time">
+    <meta name="twitter:data1" content="12 minutes">
+    <script type="application/ld+json"
+        class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://w3bits.com/#website","url":"https://w3bits.com/","name":"W3Bits","description":"Web Development Tutorials","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://w3bits.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://w3bits.com/labs/css-grid-masonry-js/#primaryimage","inLanguage":"en-US","url":"//picsum.photos/450/325?image=100","contentUrl":"//picsum.photos/450/325?image=100"},{"@type":"WebPage","@id":"https://w3bits.com/labs/css-grid-masonry-js/#webpage","url":"https://w3bits.com/labs/css-grid-masonry-js/","name":"Live Demo of Perfect Horizontal Masonry With CSS Grid","isPartOf":{"@id":"https://w3bits.com/#website"},"primaryImageOfPage":{"@id":"https://w3bits.com/labs/css-grid-masonry-js/#primaryimage"},"datePublished":"2018-12-22T17:00:30+00:00","dateModified":"2021-10-04T11:40:59+00:00","description":"A practical left-to-right masonry created using CSS Grid module and a tiny bit of JavaScript. It is totally responsive and fits well on any screen-size.","breadcrumb":{"@id":"https://w3bits.com/labs/css-grid-masonry-js/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://w3bits.com/labs/css-grid-masonry-js/"]}]},{"@type":"BreadcrumbList","@id":"https://w3bits.com/labs/css-grid-masonry-js/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://w3bits.com/"},{"@type":"ListItem","position":2,"name":"Labs","item":"https://w3bits.com/labs/"},{"@type":"ListItem","position":3,"name":"Perfect Horizontal Masonry With CSS Grid + JavaScript"}]}]}</script>
+    <!-- / Yoast SEO plugin. -->
+
+
+    <link rel="dns-prefetch" href="//s.w.org">
+    <link rel="https://api.w.org/" href="https://w3bits.com/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://w3bits.com/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://w3bits.com/wp-includes/wlwmanifest.xml">
+    <link rel="shortlink" href="https://w3bits.com/?p=3713">
+    <link rel="alternate" type="application/json+oembed"
+        href="https://w3bits.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fw3bits.com%2Flabs%2Fcss-grid-masonry-js%2F">
+    <link rel="alternate" type="text/xml+oembed"
+        href="https://w3bits.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fw3bits.com%2Flabs%2Fcss-grid-masonry-js%2F&amp;format=xml">
+    <style>
+        body {
+            background-color: #0a3d62;
+            color: #dcdde1;
+        }
+
+        .wrapper {
+            max-width: 1280px;
+        }
+
+        .masonry {
+            display: grid;
+            grid-gap: 1em;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            grid-auto-rows: 0;
+        }
+
+        .masonry-content {
+            overflow: hidden;
+        }
+
+        .masonry-brick {
+            color: #2f3640;
+            background-color: #f5f6fa;
+            transition: opacity .25s ease-in-out;
+        }
+
+        .masonry-brick:hover {
+            opacity: .75;
+        }
+
+        .masonry-title,
+        .masonry-description {
+            margin: 0;
+        }
+
+        .masonry-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 1rem 1.5rem;
+        }
+
+        .masonry-description {
+            padding: 1.5rem;
+            font-size: .75rem;
+            border-top: 1px solid #eee;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body class="labs-template-default single single-labs postid-3713">
+    <div class="container">
+
+        <div class="wrapper">
+
+            <div class="masonry">
+                <div class="masonry-brick" style="grid-row-end: span 30;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/325?image=100" alt="Dummy Image">
+                        <h3 class="masonry-title">Nesciunt aspernatur eaque similique laudantium a</h3>
+                        <p class="masonry-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Assumenda modi inventore, totam vero consequuntur, aut animi veritatis tempora nulla facere
+                            placeat velit illum explicabo dicta enim ipsum. Vitae ducimus, ratione.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 34;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/450?image=200" alt="Dummy Image">
+                        <h3 class="masonry-title">Consequatur adipisci neque possimus quod ut quidem omnis numquam
+                            dolorum</h3>
+                        <p class="masonry-description">Consectetur adipisicing elit. Sit enim ipsam mollitia repellat
+                            nemo, accusantium? Fugit id ipsam libero vitae quas perferendis, delectus a amet
+                            perspiciatis iusto. Quia, quam, culpa.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 26;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/280?image=300" alt="Dummy Image">
+                        <h3 class="masonry-title">Adipisci alias ullam est accusamus</h3>
+                        <p class="masonry-description">Adipisci repellendus ratione laudantium nisi eaque voluptatem
+                            fuga quod hic, explicabo amet at laborum maiores ducimus et a vel quidem dolorem modi.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 39;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/540?image=400" alt="Dummy Image">
+                        <h3 class="masonry-title">Dolor sit amet, consectetur adipisicing elit</h3>
+                        <p class="masonry-description">Vitae est numquam, dolore, ipsum tempora molestiae. Ut optio
+                            natus velit eaque tempora commodi dolor doloremque error quidem labore, incidunt odit est
+                            nobis numquam. Ullam quas minima, neque modi reiciendis consequuntur inventore!</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 34;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/380?image=500" alt="Dummy Image">
+                        <h3 class="masonry-title">Veritatis aut repellendus, quidem nesciunt consequatur nulla sed
+                            itaque</h3>
+                        <p class="masonry-description">Expedita voluptate similique ad harum dolorem nam ipsa repellat
+                            quos, autem eius magni minima, asperiores nobis repudiandae ut quibusdam atque! Delectus
+                            atque veniam labore suscipit ullam, consequuntur dicta, tenetur est nulla, quod obcaecati
+                            similique?</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 28;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/300?image=600" alt="Dummy Image">
+                        <h3 class="masonry-title">Culpa quo animi ut temporibus, et distinctio facere perspiciatis saepe
+                            sunt unde</h3>
+                        <p class="masonry-description">Iusto magni quasi recusandae autem ipsum asperiores consequatur
+                            explicabo, vero nam iste quas sequi reiciendis quod, quos!</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 35;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/400?image=700" alt="Dummy Image">
+                        <h3 class="masonry-title">Molestiae quod consectetur enim modi unde expedita dicta placeat?</h3>
+                        <p class="masonry-description">Aliquam laudantium mollitia quo sint maxime omnis repellendus
+                            beatae. Consequuntur molestias odio sapiente. Officia minima, nisi! Tempora vero, architecto
+                            ducimus animi nostrum nobis aliquid eligendi illo, facilis temporibus.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 32;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/300?image=800" alt="Dummy Image">
+                        <h3 class="masonry-title">Sit amet, consectetur adipisicing elit. Incidunt, commodi!</h3>
+                        <p class="masonry-description">Accusamus culpa maxime harum minus ipsa ea qui, blanditiis sequi
+                            debitis. Temporibus quisquam consequatur dolor, aliquid odio nulla dolorum animi quasi et!
+                            Reiciendis ipsum repellendus quaerat explicabo, laboriosam amet, temporibus at sed
+                            voluptatibus, minima quia.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 26;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/280?image=900" alt="Dummy Image">
+                        <h3 class="masonry-title">Inventore ducimus, voluptate a nostrum molestiae non</h3>
+                        <p class="masonry-description">Similique officia recusandae, at labore quae, minus aspernatur
+                            cupiditate repellendus optio nesciunt iure aliquid praesentium, omnis, quas est natus
+                            temporibus aliquam vero.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 38;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/480?image=925" alt="Dummy Image">
+                        <h3 class="masonry-title">Voluptatum nisi, nostrum eaque consequatur officiis similique!</h3>
+                        <p class="masonry-description">Soluta eius itaque, molestiae laborum! Facere velit reiciendis
+                            quis architecto vel minima consequuntur voluptates temporibus consequatur, aperiam maiores!
+                            Perferendis quos architecto quaerat, aliquid earum culpa labore.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 38;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/550?image=950" alt="Dummy Image">
+                        <h3 class="masonry-title">Perspiciatis non voluptatibus quo ab doloremque accusantium</h3>
+                        <p class="masonry-description">Eligendi similique excepturi cumque nemo modi voluptates mollitia
+                            atque doloribus, laborum magnam itaque a! Dignissimos expedita vel minus impedit laudantium.
+                        </p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 39;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/600?image=1000" alt="Dummy Image">
+                        <h3 class="masonry-title">Quam id laudantium debitis perferendis neque perspiciatis!</h3>
+                        <p class="masonry-description">Deleniti blanditiis iste cupiditate ea obcaecati corporis, quas
+                            nobis possimus molestiae. Sed, minima.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 30;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/325?image=25" alt="Dummy Image">
+                        <h3 class="masonry-title">Nesciunt aspernatur eaque similique laudantium a</h3>
+                        <p class="masonry-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Assumenda modi inventore, totam vero consequuntur, aut animi veritatis tempora nulla facere
+                            placeat velit illum explicabo dicta enim ipsum. Vitae ducimus, ratione.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 34;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/450?image=50" alt="Dummy Image">
+                        <h3 class="masonry-title">Consequatur adipisci neque possimus quod ut quidem omnis numquam
+                            dolorum</h3>
+                        <p class="masonry-description">Consectetur adipisicing elit. Sit enim ipsam mollitia repellat
+                            nemo, accusantium? Fugit id ipsam libero vitae quas perferendis, delectus a amet
+                            perspiciatis iusto. Quia, quam, culpa.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 26;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/280?image=75" alt="Dummy Image">
+                        <h3 class="masonry-title">Adipisci alias ullam est accusamus</h3>
+                        <p class="masonry-description">Adipisci repellendus ratione laudantium nisi eaque voluptatem
+                            fuga quod hic, explicabo amet at laborum maiores ducimus et a vel quidem dolorem modi.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 39;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/540?image=100" alt="Dummy Image">
+                        <h3 class="masonry-title">Dolor sit amet, consectetur adipisicing elit</h3>
+                        <p class="masonry-description">Vitae est numquam, dolore, ipsum tempora molestiae. Ut optio
+                            natus velit eaque tempora commodi dolor doloremque error quidem labore, incidunt odit est
+                            nobis numquam. Ullam quas minima, neque modi reiciendis consequuntur inventore!</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 34;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/380?image=125" alt="Dummy Image">
+                        <h3 class="masonry-title">Veritatis aut repellendus, quidem nesciunt consequatur nulla sed
+                            itaque</h3>
+                        <p class="masonry-description">Expedita voluptate similique ad harum dolorem nam ipsa repellat
+                            quos, autem eius magni minima, asperiores nobis repudiandae ut quibusdam atque! Delectus
+                            atque veniam labore suscipit ullam, consequuntur dicta, tenetur est nulla, quod obcaecati
+                            similique?</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 28;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/300?image=161" alt="Dummy Image">
+                        <h3 class="masonry-title">Culpa quo animi ut temporibus, et distinctio facere perspiciatis saepe
+                            sunt unde</h3>
+                        <p class="masonry-description">Iusto magni quasi recusandae autem ipsum asperiores consequatur
+                            explicabo, vero nam iste quas sequi reiciendis quod, quos!</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 35;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/400?image=175" alt="Dummy Image">
+                        <h3 class="masonry-title">Molestiae quod consectetur enim modi unde expedita dicta placeat?</h3>
+                        <p class="masonry-description">Aliquam laudantium mollitia quo sint maxime omnis repellendus
+                            beatae. Consequuntur molestias odio sapiente. Officia minima, nisi! Tempora vero, architecto
+                            ducimus animi nostrum nobis aliquid eligendi illo, facilis temporibus.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 32;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/300?image=200" alt="Dummy Image">
+                        <h3 class="masonry-title">Sit amet, consectetur adipisicing elit. Incidunt, commodi!</h3>
+                        <p class="masonry-description">Accusamus culpa maxime harum minus ipsa ea qui, blanditiis sequi
+                            debitis. Temporibus quisquam consequatur dolor, aliquid odio nulla dolorum animi quasi et!
+                            Reiciendis ipsum repellendus quaerat explicabo, laboriosam amet, temporibus at sed
+                            voluptatibus, minima quia.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 26;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/280?image=225" alt="Dummy Image">
+                        <h3 class="masonry-title">Inventore ducimus, voluptate a nostrum molestiae non</h3>
+                        <p class="masonry-description">Similique officia recusandae, at labore quae, minus aspernatur
+                            cupiditate repellendus optio nesciunt iure aliquid praesentium, omnis, quas est natus
+                            temporibus aliquam vero.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 38;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/480?image=250" alt="Dummy Image">
+                        <h3 class="masonry-title">Voluptatum nisi, nostrum eaque consequatur officiis similique!</h3>
+                        <p class="masonry-description">Soluta eius itaque, molestiae laborum! Facere velit reiciendis
+                            quis architecto vel minima consequuntur voluptates temporibus consequatur, aperiam maiores!
+                            Perferendis quos architecto quaerat, aliquid earum culpa labore.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 38;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/550?image=275" alt="Dummy Image">
+                        <h3 class="masonry-title">Perspiciatis non voluptatibus quo ab doloremque accusantium</h3>
+                        <p class="masonry-description">Eligendi similique excepturi cumque nemo modi voluptates mollitia
+                            atque doloribus, laborum magnam itaque a! Dignissimos expedita vel minus impedit laudantium.
+                        </p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 39;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/600?image=300" alt="Dummy Image">
+                        <h3 class="masonry-title">Quam id laudantium debitis perferendis neque perspiciatis!</h3>
+                        <p class="masonry-description">Deleniti blanditiis iste cupiditate ea obcaecati corporis, quas
+                            nobis possimus molestiae. Sed, minima.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 30;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/325?image=13" alt="Dummy Image">
+                        <h3 class="masonry-title">Nesciunt aspernatur eaque similique laudantium a</h3>
+                        <p class="masonry-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Assumenda modi inventore, totam vero consequuntur, aut animi veritatis tempora nulla facere
+                            placeat velit illum explicabo dicta enim ipsum. Vitae ducimus, ratione.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 34;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/450?image=26" alt="Dummy Image">
+                        <h3 class="masonry-title">Consequatur adipisci neque possimus quod ut quidem omnis numquam
+                            dolorum</h3>
+                        <p class="masonry-description">Consectetur adipisicing elit. Sit enim ipsam mollitia repellat
+                            nemo, accusantium? Fugit id ipsam libero vitae quas perferendis, delectus a amet
+                            perspiciatis iusto. Quia, quam, culpa.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 26;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/280?image=39" alt="Dummy Image">
+                        <h3 class="masonry-title">Adipisci alias ullam est accusamus</h3>
+                        <p class="masonry-description">Adipisci repellendus ratione laudantium nisi eaque voluptatem
+                            fuga quod hic, explicabo amet at laborum maiores ducimus et a vel quidem dolorem modi.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 39;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/540?image=52" alt="Dummy Image">
+                        <h3 class="masonry-title">Dolor sit amet, consectetur adipisicing elit</h3>
+                        <p class="masonry-description">Vitae est numquam, dolore, ipsum tempora molestiae. Ut optio
+                            natus velit eaque tempora commodi dolor doloremque error quidem labore, incidunt odit est
+                            nobis numquam. Ullam quas minima, neque modi reiciendis consequuntur inventore!</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 34;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/380?image=65" alt="Dummy Image">
+                        <h3 class="masonry-title">Veritatis aut repellendus, quidem nesciunt consequatur nulla sed
+                            itaque</h3>
+                        <p class="masonry-description">Expedita voluptate similique ad harum dolorem nam ipsa repellat
+                            quos, autem eius magni minima, asperiores nobis repudiandae ut quibusdam atque! Delectus
+                            atque veniam labore suscipit ullam, consequuntur dicta, tenetur est nulla, quod obcaecati
+                            similique?</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 28;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/300?image=78" alt="Dummy Image">
+                        <h3 class="masonry-title">Culpa quo animi ut temporibus, et distinctio facere perspiciatis saepe
+                            sunt unde</h3>
+                        <p class="masonry-description">Iusto magni quasi recusandae autem ipsum asperiores consequatur
+                            explicabo, vero nam iste quas sequi reiciendis quod, quos!</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 35;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/400?image=91" alt="Dummy Image">
+                        <h3 class="masonry-title">Molestiae quod consectetur enim modi unde expedita dicta placeat?</h3>
+                        <p class="masonry-description">Aliquam laudantium mollitia quo sint maxime omnis repellendus
+                            beatae. Consequuntur molestias odio sapiente. Officia minima, nisi! Tempora vero, architecto
+                            ducimus animi nostrum nobis aliquid eligendi illo, facilis temporibus.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 32;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/300?image=104" alt="Dummy Image">
+                        <h3 class="masonry-title">Sit amet, consectetur adipisicing elit. Incidunt, commodi!</h3>
+                        <p class="masonry-description">Accusamus culpa maxime harum minus ipsa ea qui, blanditiis sequi
+                            debitis. Temporibus quisquam consequatur dolor, aliquid odio nulla dolorum animi quasi et!
+                            Reiciendis ipsum repellendus quaerat explicabo, laboriosam amet, temporibus at sed
+                            voluptatibus, minima quia.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 26;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/280?image=117" alt="Dummy Image">
+                        <h3 class="masonry-title">Inventore ducimus, voluptate a nostrum molestiae non</h3>
+                        <p class="masonry-description">Similique officia recusandae, at labore quae, minus aspernatur
+                            cupiditate repellendus optio nesciunt iure aliquid praesentium, omnis, quas est natus
+                            temporibus aliquam vero.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 38;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/480?image=130" alt="Dummy Image">
+                        <h3 class="masonry-title">Voluptatum nisi, nostrum eaque consequatur officiis similique!</h3>
+                        <p class="masonry-description">Soluta eius itaque, molestiae laborum! Facere velit reiciendis
+                            quis architecto vel minima consequuntur voluptates temporibus consequatur, aperiam maiores!
+                            Perferendis quos architecto quaerat, aliquid earum culpa labore.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 38;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/550?image=143" alt="Dummy Image">
+                        <h3 class="masonry-title">Perspiciatis non voluptatibus quo ab doloremque accusantium</h3>
+                        <p class="masonry-description">Eligendi similique excepturi cumque nemo modi voluptates mollitia
+                            atque doloribus, laborum magnam itaque a! Dignissimos expedita vel minus impedit laudantium.
+                        </p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 39;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/600?image=156" alt="Dummy Image">
+                        <h3 class="masonry-title">Quam id laudantium debitis perferendis neque perspiciatis!</h3>
+                        <p class="masonry-description">Deleniti blanditiis iste cupiditate ea obcaecati corporis, quas
+                            nobis possimus molestiae. Sed, minima.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 30;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/325?image=100" alt="Dummy Image">
+                        <h3 class="masonry-title">Nesciunt aspernatur eaque similique laudantium a</h3>
+                        <p class="masonry-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Assumenda modi inventore, totam vero consequuntur, aut animi veritatis tempora nulla facere
+                            placeat velit illum explicabo dicta enim ipsum. Vitae ducimus, ratione.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 34;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/450?image=200" alt="Dummy Image">
+                        <h3 class="masonry-title">Consequatur adipisci neque possimus quod ut quidem omnis numquam
+                            dolorum</h3>
+                        <p class="masonry-description">Consectetur adipisicing elit. Sit enim ipsam mollitia repellat
+                            nemo, accusantium? Fugit id ipsam libero vitae quas perferendis, delectus a amet
+                            perspiciatis iusto. Quia, quam, culpa.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 26;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/280?image=300" alt="Dummy Image">
+                        <h3 class="masonry-title">Adipisci alias ullam est accusamus</h3>
+                        <p class="masonry-description">Adipisci repellendus ratione laudantium nisi eaque voluptatem
+                            fuga quod hic, explicabo amet at laborum maiores ducimus et a vel quidem dolorem modi.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 39;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/540?image=400" alt="Dummy Image">
+                        <h3 class="masonry-title">Dolor sit amet, consectetur adipisicing elit</h3>
+                        <p class="masonry-description">Vitae est numquam, dolore, ipsum tempora molestiae. Ut optio
+                            natus velit eaque tempora commodi dolor doloremque error quidem labore, incidunt odit est
+                            nobis numquam. Ullam quas minima, neque modi reiciendis consequuntur inventore!</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 34;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/380?image=500" alt="Dummy Image">
+                        <h3 class="masonry-title">Veritatis aut repellendus, quidem nesciunt consequatur nulla sed
+                            itaque</h3>
+                        <p class="masonry-description">Expedita voluptate similique ad harum dolorem nam ipsa repellat
+                            quos, autem eius magni minima, asperiores nobis repudiandae ut quibusdam atque! Delectus
+                            atque veniam labore suscipit ullam, consequuntur dicta, tenetur est nulla, quod obcaecati
+                            similique?</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 28;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/300?image=600" alt="Dummy Image">
+                        <h3 class="masonry-title">Culpa quo animi ut temporibus, et distinctio facere perspiciatis saepe
+                            sunt unde</h3>
+                        <p class="masonry-description">Iusto magni quasi recusandae autem ipsum asperiores consequatur
+                            explicabo, vero nam iste quas sequi reiciendis quod, quos!</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 35;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/400?image=700" alt="Dummy Image">
+                        <h3 class="masonry-title">Molestiae quod consectetur enim modi unde expedita dicta placeat?</h3>
+                        <p class="masonry-description">Aliquam laudantium mollitia quo sint maxime omnis repellendus
+                            beatae. Consequuntur molestias odio sapiente. Officia minima, nisi! Tempora vero, architecto
+                            ducimus animi nostrum nobis aliquid eligendi illo, facilis temporibus.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 32;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/300?image=800" alt="Dummy Image">
+                        <h3 class="masonry-title">Sit amet, consectetur adipisicing elit. Incidunt, commodi!</h3>
+                        <p class="masonry-description">Accusamus culpa maxime harum minus ipsa ea qui, blanditiis sequi
+                            debitis. Temporibus quisquam consequatur dolor, aliquid odio nulla dolorum animi quasi et!
+                            Reiciendis ipsum repellendus quaerat explicabo, laboriosam amet, temporibus at sed
+                            voluptatibus, minima quia.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 26;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/280?image=900" alt="Dummy Image">
+                        <h3 class="masonry-title">Inventore ducimus, voluptate a nostrum molestiae non</h3>
+                        <p class="masonry-description">Similique officia recusandae, at labore quae, minus aspernatur
+                            cupiditate repellendus optio nesciunt iure aliquid praesentium, omnis, quas est natus
+                            temporibus aliquam vero.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 38;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/480?image=925" alt="Dummy Image">
+                        <h3 class="masonry-title">Voluptatum nisi, nostrum eaque consequatur officiis similique!</h3>
+                        <p class="masonry-description">Soluta eius itaque, molestiae laborum! Facere velit reiciendis
+                            quis architecto vel minima consequuntur voluptates temporibus consequatur, aperiam maiores!
+                            Perferendis quos architecto quaerat, aliquid earum culpa labore.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 38;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/550?image=950" alt="Dummy Image">
+                        <h3 class="masonry-title">Perspiciatis non voluptatibus quo ab doloremque accusantium</h3>
+                        <p class="masonry-description">Eligendi similique excepturi cumque nemo modi voluptates mollitia
+                            atque doloribus, laborum magnam itaque a! Dignissimos expedita vel minus impedit laudantium.
+                        </p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 39;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/600?image=1000" alt="Dummy Image">
+                        <h3 class="masonry-title">Quam id laudantium debitis perferendis neque perspiciatis!</h3>
+                        <p class="masonry-description">Deleniti blanditiis iste cupiditate ea obcaecati corporis, quas
+                            nobis possimus molestiae. Sed, minima.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 30;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/325?image=25" alt="Dummy Image">
+                        <h3 class="masonry-title">Nesciunt aspernatur eaque similique laudantium a</h3>
+                        <p class="masonry-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Assumenda modi inventore, totam vero consequuntur, aut animi veritatis tempora nulla facere
+                            placeat velit illum explicabo dicta enim ipsum. Vitae ducimus, ratione.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 34;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/450?image=50" alt="Dummy Image">
+                        <h3 class="masonry-title">Consequatur adipisci neque possimus quod ut quidem omnis numquam
+                            dolorum</h3>
+                        <p class="masonry-description">Consectetur adipisicing elit. Sit enim ipsam mollitia repellat
+                            nemo, accusantium? Fugit id ipsam libero vitae quas perferendis, delectus a amet
+                            perspiciatis iusto. Quia, quam, culpa.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 26;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/280?image=75" alt="Dummy Image">
+                        <h3 class="masonry-title">Adipisci alias ullam est accusamus</h3>
+                        <p class="masonry-description">Adipisci repellendus ratione laudantium nisi eaque voluptatem
+                            fuga quod hic, explicabo amet at laborum maiores ducimus et a vel quidem dolorem modi.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 39;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/540?image=100" alt="Dummy Image">
+                        <h3 class="masonry-title">Dolor sit amet, consectetur adipisicing elit</h3>
+                        <p class="masonry-description">Vitae est numquam, dolore, ipsum tempora molestiae. Ut optio
+                            natus velit eaque tempora commodi dolor doloremque error quidem labore, incidunt odit est
+                            nobis numquam. Ullam quas minima, neque modi reiciendis consequuntur inventore!</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 34;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/380?image=125" alt="Dummy Image">
+                        <h3 class="masonry-title">Veritatis aut repellendus, quidem nesciunt consequatur nulla sed
+                            itaque</h3>
+                        <p class="masonry-description">Expedita voluptate similique ad harum dolorem nam ipsa repellat
+                            quos, autem eius magni minima, asperiores nobis repudiandae ut quibusdam atque! Delectus
+                            atque veniam labore suscipit ullam, consequuntur dicta, tenetur est nulla, quod obcaecati
+                            similique?</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 18;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/300?image=150" alt="Dummy Image">
+                        <h3 class="masonry-title">Culpa quo animi ut temporibus, et distinctio facere perspiciatis saepe
+                            sunt unde</h3>
+                        <p class="masonry-description">Iusto magni quasi recusandae autem ipsum asperiores consequatur
+                            explicabo, vero nam iste quas sequi reiciendis quod, quos!</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 35;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/400?image=175" alt="Dummy Image">
+                        <h3 class="masonry-title">Molestiae quod consectetur enim modi unde expedita dicta placeat?</h3>
+                        <p class="masonry-description">Aliquam laudantium mollitia quo sint maxime omnis repellendus
+                            beatae. Consequuntur molestias odio sapiente. Officia minima, nisi! Tempora vero, architecto
+                            ducimus animi nostrum nobis aliquid eligendi illo, facilis temporibus.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 32;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/300?image=200" alt="Dummy Image">
+                        <h3 class="masonry-title">Sit amet, consectetur adipisicing elit. Incidunt, commodi!</h3>
+                        <p class="masonry-description">Accusamus culpa maxime harum minus ipsa ea qui, blanditiis sequi
+                            debitis. Temporibus quisquam consequatur dolor, aliquid odio nulla dolorum animi quasi et!
+                            Reiciendis ipsum repellendus quaerat explicabo, laboriosam amet, temporibus at sed
+                            voluptatibus, minima quia.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 26;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/280?image=225" alt="Dummy Image">
+                        <h3 class="masonry-title">Inventore ducimus, voluptate a nostrum molestiae non</h3>
+                        <p class="masonry-description">Similique officia recusandae, at labore quae, minus aspernatur
+                            cupiditate repellendus optio nesciunt iure aliquid praesentium, omnis, quas est natus
+                            temporibus aliquam vero.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 38;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/480?image=250" alt="Dummy Image">
+                        <h3 class="masonry-title">Voluptatum nisi, nostrum eaque consequatur officiis similique!</h3>
+                        <p class="masonry-description">Soluta eius itaque, molestiae laborum! Facere velit reiciendis
+                            quis architecto vel minima consequuntur voluptates temporibus consequatur, aperiam maiores!
+                            Perferendis quos architecto quaerat, aliquid earum culpa labore.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 38;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/550?image=275" alt="Dummy Image">
+                        <h3 class="masonry-title">Perspiciatis non voluptatibus quo ab doloremque accusantium</h3>
+                        <p class="masonry-description">Eligendi similique excepturi cumque nemo modi voluptates mollitia
+                            atque doloribus, laborum magnam itaque a! Dignissimos expedita vel minus impedit laudantium.
+                        </p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 39;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/600?image=300" alt="Dummy Image">
+                        <h3 class="masonry-title">Quam id laudantium debitis perferendis neque perspiciatis!</h3>
+                        <p class="masonry-description">Deleniti blanditiis iste cupiditate ea obcaecati corporis, quas
+                            nobis possimus molestiae. Sed, minima.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 30;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/325?image=13" alt="Dummy Image">
+                        <h3 class="masonry-title">Nesciunt aspernatur eaque similique laudantium a</h3>
+                        <p class="masonry-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Assumenda modi inventore, totam vero consequuntur, aut animi veritatis tempora nulla facere
+                            placeat velit illum explicabo dicta enim ipsum. Vitae ducimus, ratione.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 34;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/450?image=26" alt="Dummy Image">
+                        <h3 class="masonry-title">Consequatur adipisci neque possimus quod ut quidem omnis numquam
+                            dolorum</h3>
+                        <p class="masonry-description">Consectetur adipisicing elit. Sit enim ipsam mollitia repellat
+                            nemo, accusantium? Fugit id ipsam libero vitae quas perferendis, delectus a amet
+                            perspiciatis iusto. Quia, quam, culpa.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 26;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/280?image=39" alt="Dummy Image">
+                        <h3 class="masonry-title">Adipisci alias ullam est accusamus</h3>
+                        <p class="masonry-description">Adipisci repellendus ratione laudantium nisi eaque voluptatem
+                            fuga quod hic, explicabo amet at laborum maiores ducimus et a vel quidem dolorem modi.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 39;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/540?image=52" alt="Dummy Image">
+                        <h3 class="masonry-title">Dolor sit amet, consectetur adipisicing elit</h3>
+                        <p class="masonry-description">Vitae est numquam, dolore, ipsum tempora molestiae. Ut optio
+                            natus velit eaque tempora commodi dolor doloremque error quidem labore, incidunt odit est
+                            nobis numquam. Ullam quas minima, neque modi reiciendis consequuntur inventore!</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 34;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/380?image=65" alt="Dummy Image">
+                        <h3 class="masonry-title">Veritatis aut repellendus, quidem nesciunt consequatur nulla sed
+                            itaque</h3>
+                        <p class="masonry-description">Expedita voluptate similique ad harum dolorem nam ipsa repellat
+                            quos, autem eius magni minima, asperiores nobis repudiandae ut quibusdam atque! Delectus
+                            atque veniam labore suscipit ullam, consequuntur dicta, tenetur est nulla, quod obcaecati
+                            similique?</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 28;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/300?image=78" alt="Dummy Image">
+                        <h3 class="masonry-title">Culpa quo animi ut temporibus, et distinctio facere perspiciatis saepe
+                            sunt unde</h3>
+                        <p class="masonry-description">Iusto magni quasi recusandae autem ipsum asperiores consequatur
+                            explicabo, vero nam iste quas sequi reiciendis quod, quos!</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 35;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/400?image=91" alt="Dummy Image">
+                        <h3 class="masonry-title">Molestiae quod consectetur enim modi unde expedita dicta placeat?</h3>
+                        <p class="masonry-description">Aliquam laudantium mollitia quo sint maxime omnis repellendus
+                            beatae. Consequuntur molestias odio sapiente. Officia minima, nisi! Tempora vero, architecto
+                            ducimus animi nostrum nobis aliquid eligendi illo, facilis temporibus.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 32;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/300?image=104" alt="Dummy Image">
+                        <h3 class="masonry-title">Sit amet, consectetur adipisicing elit. Incidunt, commodi!</h3>
+                        <p class="masonry-description">Accusamus culpa maxime harum minus ipsa ea qui, blanditiis sequi
+                            debitis. Temporibus quisquam consequatur dolor, aliquid odio nulla dolorum animi quasi et!
+                            Reiciendis ipsum repellendus quaerat explicabo, laboriosam amet, temporibus at sed
+                            voluptatibus, minima quia.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 26;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/280?image=117" alt="Dummy Image">
+                        <h3 class="masonry-title">Inventore ducimus, voluptate a nostrum molestiae non</h3>
+                        <p class="masonry-description">Similique officia recusandae, at labore quae, minus aspernatur
+                            cupiditate repellendus optio nesciunt iure aliquid praesentium, omnis, quas est natus
+                            temporibus aliquam vero.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 38;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/480?image=130" alt="Dummy Image">
+                        <h3 class="masonry-title">Voluptatum nisi, nostrum eaque consequatur officiis similique!</h3>
+                        <p class="masonry-description">Soluta eius itaque, molestiae laborum! Facere velit reiciendis
+                            quis architecto vel minima consequuntur voluptates temporibus consequatur, aperiam maiores!
+                            Perferendis quos architecto quaerat, aliquid earum culpa labore.</p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 38;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/550?image=143" alt="Dummy Image">
+                        <h3 class="masonry-title">Perspiciatis non voluptatibus quo ab doloremque accusantium</h3>
+                        <p class="masonry-description">Eligendi similique excepturi cumque nemo modi voluptates mollitia
+                            atque doloribus, laborum magnam itaque a! Dignissimos expedita vel minus impedit laudantium.
+                        </p>
+                    </div>
+                </div>
+                <div class="masonry-brick" style="grid-row-end: span 39;">
+                    <div class="masonry-content">
+                        <img src="//picsum.photos/450/600?image=156" alt="Dummy Image">
+                        <h3 class="masonry-title">Quam id laudantium debitis perferendis neque perspiciatis!</h3>
+                        <p class="masonry-description">Deleniti blanditiis iste cupiditate ea obcaecati corporis, quas
+                            nobis possimus molestiae. Sed, minima.</p>
+                    </div>
+                </div>
+
+            </div>
+            <a href="https://w3bits.com/css-grid-masonry/" class="lab-article-button">Read the Article <svg
+                    class="icon icon-arrow-right">
+                    <use xlink:href="https://w3bits.com/wp-content/themes/w/assets/images/sprite.svg#icon-arrow-right">
+                    </use>
+                </svg></a>
+        </div>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+        <script>
+            /**
+             * Set appropriate spanning to any masonry item
+             *
+             * Get different properties we already set for the masonry, calculate 
+             * height or spanning for any cell of the masonry grid based on its 
+             * content-wrapper's height, the (row) gap of the grid, and the size 
+             * of the implicit row tracks.
+             *
+             * @param item Object A brick/tile/cell inside the masonry
+             */
+            function resizeMasonryItem(item) {
+                /* Get the grid object, its row-gap, and the size of its implicit rows */
+                var grid = document.getElementsByClassName('masonry')[0],
+                    rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap')),
+                    rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+
+                /*
+                 * Spanning for any brick = S
+                 * Grid's row-gap = G
+                 * Size of grid's implicitly create row-track = R
+                 * Height of item content = H
+                 * Net height of the item = H1 = H + G
+                 * Net height of the implicit row-track = T = G + R
+                 * S = H1 / T
+                 */
+                var rowSpan = Math.ceil((item.querySelector('.masonry-content').getBoundingClientRect().height + rowGap) / (rowHeight + rowGap));
+
+                /* Set the spanning as calculated above (S) */
+                item.style.gridRowEnd = 'span ' + rowSpan;
+            }
+
+            /**
+             * Apply spanning to all the masonry items
+             *
+             * Loop through all the items and apply the spanning to them using 
+             * `resizeMasonryItem()` function.
+             *
+             * @uses resizeMasonryItem
+             */
+            function resizeAllMasonryItems() {
+                // Get all item class objects in one list
+                var allItems = document.getElementsByClassName('masonry-brick');
+
+                /*
+                 * Loop through the above list and execute the spanning function to
+                 * each list-item (i.e. each masonry item)
+                 */
+                for (var i = 0; i > allItems.length; i++) {
+                    resizeMasonryItem(allItems[i]);
+                }
+            }
+
+            /**
+             * Resize the items when all the images inside the masonry grid 
+             * finish loading. This will ensure that all the content inside our
+             * masonry items is visible.
+             *
+             * @uses ImagesLoaded
+             * @uses resizeMasonryItem
+             */
+            function waitForImages() {
+                var allItems = document.getElementsByClassName('masonry-brick');
+                for (var i = 0; i < allItems.length; i++) {
+                    imagesLoaded(allItems[i], function (instance) {
+                        var item = instance.elements[0];
+                        resizeMasonryItem(item);
+                    });
+                }
+            }
+
+            /* Resize all the grid items on the load and resize events */
+            var masonryEvents = ['load', 'resize'];
+            masonryEvents.forEach(function (event) {
+                window.addEventListener(event, resizeAllMasonryItems);
+            });
+
+            /* Do a resize once more when all the images finish loading */
+            waitForImages();
+        </script>
+        <script>(function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-10703354-8', 'w3bits.com'); ga('require', 'displayfeatures'); ga('send', 'pageview');</script>
+        <script type="text/javascript" src="https://w3bits.com/wp-content/themes/w/assets/js/prettify.js"
+            id="bits-prettify-js"></script>
+        <script type="text/javascript" id="bits-prettify-js-after">
+            prettyPrint()
+        </script>
+    </div>
+
+
+</body>
+
+</html>

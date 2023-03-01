@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<title>input_checked</title>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://wellness-test.suntory.com.tw/js/jquery-3.6.0.min.js"></script>
+</head>
+<style>
+    .check_group input {
+        display: none;
+    }
+
+    .check_group {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .check_group .check_label {
+        margin-bottom: 0;
+        border: 1px #D8D8D8 solid;
+        /* display: block; */
+        padding: 15px 15px 15px 45px;
+        position: relative;
+        background: #fff;
+        font-size: 15px;
+        line-height: 1;
+    }
+
+    .check_group .check_label::before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        background: url(https://wellness.suntory.com.tw/css/shopping/assets/img/icon_check_off.svg) no-repeat center center;
+        background-size: 20px 20px;
+        position: absolute;
+        top: calc(50% - 10px);
+        left: 15px;
+    }
+
+    .check_group input:checked+.check_label {
+        border: 2px #FFCC66 solid;
+        background: #FFF8EE;
+    }
+
+    .check_group input:checked+.check_label::before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        background: url(https://wellness.suntory.com.tw/css/shopping/assets/img/icon_check_on.svg) no-repeat center center;
+        background-size: 20px 20px;
+    }
+
+    .check_group.pc_dual {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        gap: 16px;
+    }
+</style>
+
+</script>
+
+<body>
+    <div class="check_group pc_dual">
+        <input type="checkbox" id="notice01" name=""><label for="notice01" class="check_label" tabindex="0">電子報</label>
+        <input type="checkbox" id="notice02" name=""><label for="notice02" class="check_label" tabindex="0">紙本DM</label>
+    </div>
+</body>
+
+</html>

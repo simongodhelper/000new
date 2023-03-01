@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<title>inset</title>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://wellness-test.suntory.com.tw/js/jquery-3.6.0.min.js"></script>
+</head>
+<style>
+    img {
+        width: 100px;
+        position: relative;
+    }
+
+    .d12 {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background: #ccc;
+    }
+
+    .d12::before {
+        content: "\2715";
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 16px;
+        color: #000;
+    }
+
+    img+img {
+        margin-left: -60px;
+    }
+
+    .d_b {
+        background-color: red;
+    }
+</style>
+<script>
+    $('document').ready(function () {
+        $('#invoice').click(function () {
+            $(".mask").addClass('d_b');
+        });
+    });
+</script>
+
+<body>
+    X ~ Y
+    ul ~ p {
+    color: red;
+    }
+    這個一般兄弟組合器和相鄰兄弟組合器X + Y非常相似，但是，更加不嚴格。 相鄰兄弟選擇器（ul + p）只會選擇剛剛好在前一個選擇器之前的第一個元素，而這個選擇器的範圍會更廣一點。
+    在我們上面的案例中，它會選擇所有的p元素，只要他們是在ul之後的。
+
+    <div class="mask">mask</div>
+    <div class="mask_in">mask_in</div>
+    <div>
+        <img src="https://demo.cssworld.cn/images/common/l/1.jpg">
+        <img src="https://demo.cssworld.cn/images/common/l/1.jpg">
+        <img src="https://demo.cssworld.cn/images/common/l/1.jpg">
+    </div>
+    <div class="d12"></div>
+    <button id="invoice">123</button>
+</body>
+
+</html>

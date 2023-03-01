@@ -1,0 +1,311 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="oxxo.studio">
+    <meta name="copyright" content="oxxo.studio">
+    <title>i++</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            min-height: 100vh;
+            font-family: "Exo", "Bungee Shade", cursive, Arial, sans-serif;
+            background-color: #fff;
+            color: #fff;
+            display: grid;
+            padding: 1rem;
+            line-height: 1.6;
+            align-items: start;
+        }
+
+        ul {
+            list-style: none outside none;
+        }
+
+        figure {
+            margin: 0;
+            padding: 0;
+        }
+
+        figure img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        figure {
+            border-radius: 0.25rem;
+            overflow: hidden;
+            box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+            position: relative;
+        }
+
+        figure::after {
+            content: "";
+            position: absolute;
+            background: darkorchid;
+            inset: 0;
+            opacity: 0.8;
+            mix-blend-mode: screen;
+        }
+
+        h3 {
+            font-size: clamp(1.2rem, 1.2rem + 4vw, 1.5rem);
+            line-height: 1.05;
+            font-weight: 800;
+            hyphens: auto;
+            padding: 0 0.25em;
+        }
+
+        p {
+            font-size: 85%;
+            hyphens: auto;
+        }
+
+        .subtitle {
+            color: var(--primary-color);
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25em;
+        }
+
+        .subtitle svg {
+            display: block;
+            width: 1.25em;
+            height: 1.25em;
+        }
+
+        button {
+            display: inline-flex;
+            font-weight: 400;
+            color: #212529;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: 0.25rem;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+                border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            color: #fff;
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        button:hover {
+            text-decoration: none;
+            opacity: 0.8;
+        }
+
+        button:focus {
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+            color: #fff;
+            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+        }
+
+        button svg {
+            display: block;
+            width: 1em;
+            height: 1em;
+        }
+
+        .card {
+            text-align: center;
+            text-shadow: 1px 0 0 rgb(35 4 4 / 95%);
+        }
+
+        /* Layout */
+
+        .cards {
+            width: min(100% - 2rem, 768px);
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 2rem;
+        }
+
+        li:nth-of-type(1) {
+            grid-column: 1 / -1;
+        }
+
+        .card {
+            display: grid;
+            grid-template-rows: 3rem repeat(4, auto) 3rem;
+            grid-template-columns: 1.5rem minmax(0, 1fr) 1.5rem;
+            grid-template-areas:
+                "...    ...       ..."
+                "...    subtitle  ..."
+                "...    title     ..."
+                "...    content   ..."
+                "...    button    ..."
+                "...    ...       ...";
+            row-gap: 1.25rem;
+        }
+
+        .card>*:not(figure) {
+            z-index: 2;
+            justify-self: center;
+        }
+
+        .card::before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(0 0 0 / 51%);
+            border-radius: 0.25rem;
+            mix-blend-mode: multiply;
+        }
+
+        .card figure,
+        .card::before {
+            grid-area: 1 / 1 / -1 / -1;
+        }
+
+        .card::before {
+            z-index: 1;
+        }
+
+        .card .subtitle {
+            grid-area: subtitle;
+        }
+
+        .card h3 {
+            grid-area: title;
+        }
+
+        .card p {
+            grid-area: content;
+        }
+
+        .card button {
+            grid-area: button;
+            align-self: center;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <ul class="cards">
+        <li class="card" style="--primary-color: #9c27b0;">
+            <figure>
+                <img src="https://picsum.photos/1280/600?random=1" alt="">
+            </figure>
+            <div class="subtitle">
+                <span class="icon"><svg t="1669792717856" class="icon" viewBox="0 0 1451 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="6875" width="200" height="200">
+                        <path
+                            d="M330.837333 731.278222 207.758222 648.533333 145.635556 678.513778 214.584889 823.836444 365.169778 736.881778Z"
+                            p-id="6876" fill="currentColor"></path>
+                        <path
+                            d="M318.236444 836.380444 214.641778 850.659556 297.045333 940.117333 326.286222 922.595556Z"
+                            p-id="6877" fill="currentColor"></path>
+                        <path d="M45.710222 724.679111 0 735.032889 190.321778 837.717333 289.564444 795.932444Z"
+                            p-id="6878" fill="currentColor"></path>
+                        <path
+                            d="M1018.709333 589.596444 781.681778 693.617778 979.569778 967.281778 1030.968889 948.906667Z"
+                            p-id="6879" fill="currentColor"></path>
+                        <path
+                            d="M1407.544889 336.270222c-76.885333-28.245333-188.586667 22.670222-188.586667 22.670222C285.866667 750.705778 168.874667 834.190222 168.874667 834.190222c-41.130667 27.505778 4.352 27.534222 4.352 27.534222l224.341333-25.685333c126.691556-11.975111 216.376889-58.282667 216.376889-58.282667 76.401778-27.676444 728.860444-313.6 728.860444-313.6 34.986667-18.830222 69.944889-51.057778 69.944889-51.057778 23.722667-17.322667 34.901333-52.366222 34.901333-52.366222C1450.439111 343.324444 1407.544889 336.270222 1407.544889 336.270222z"
+                            p-id="6880" fill="currentColor"></path>
+                        <path
+                            d="M1315.84 429.852444 407.921778 822.812444c-14.819556 6.4-10.353778 13.226667-10.353778 13.226667 3.811556-0.398222 7.623111-0.768 11.377778-1.194667 40.732444-4.551111 77.340444-12.544 107.946667-21.134222 60.046222-16.867556 97.052444-35.953778 97.052444-35.953778 76.401778-27.676444 728.860444-313.6 728.860444-313.6 34.986667-18.830222 69.944889-51.057778 69.944889-51.057778C1400.632889 400.839111 1315.84 429.852444 1315.84 429.852444z"
+                            p-id="6881" fill="currentColor"></path>
+                        <path
+                            d="M164.039111 292.977778 123.278222 272.867556 104.704 278.755556 129.080889 318.492444 673.678222 653.568 919.978667 546.588444Z"
+                            p-id="6882" fill="currentColor"></path>
+                    </svg></span>
+                Travel
+            </div>
+            <h3>A Decolonized Approach to Innovation</h3>
+            <p>This image has an aspect ratio of 3/2. But when the text is longer, the image grows too, overriding its
+                aspect ratio. Cool!</p>
+            <button> <svg t="1669718397509" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="2467" width="200" height="200">
+                    <path
+                        d="M928 0H288c-53.02 0-96 42.98-96 96v96H96c-53.02 0-96 42.98-96 96v640c0 53.02 42.98 96 96 96h640c53.02 0 96-42.98 96-96v-96h96c53.02 0 96-42.98 96-96V96c0-53.02-42.98-96-96-96zM724 928H108a12 12 0 0 1-12-12V300a12 12 0 0 1 12-12h84v448c0 53.02 42.98 96 96 96h448v84a12 12 0 0 1-12 12z m192-192H300a12 12 0 0 1-12-12V108a12 12 0 0 1 12-12h616a12 12 0 0 1 12 12v616a12 12 0 0 1-12 12z"
+                        p-id="2468" fill="currentColor"></path>
+                </svg>View project</button>
+        </li>
+        <li class="card" style="--primary-color: #e91e63;">
+            <figure>
+                <img src="https://picsum.photos/1280/600?random=2" alt="">
+            </figure>
+            <div class="subtitle">
+                <span class="icon"><svg t="1669792893802" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="13109" width="200" height="200">
+                        <path
+                            d="M384 469.333333H213.333333c-46.933333 0-85.333333-38.4-85.333333-85.333333V213.333333c0-46.933333 38.4-85.333333 85.333333-85.333333h170.666667c46.933333 0 85.333333 38.4 85.333333 85.333333v170.666667c0 46.933333-38.4 85.333333-85.333333 85.333333zM213.333333 213.333333v170.666667h170.666667V213.333333H213.333333z"
+                            p-id="13110" fill="currentColor"></path>
+                        <path
+                            d="M170.666667 554.666667h256c25.6 0 42.666667 17.066667 42.666666 42.666666v256c0 25.6-17.066667 42.666667-42.666666 42.666667H170.666667c-25.6 0-42.666667-17.066667-42.666667-42.666667v-256c0-25.6 17.066667-42.666667 42.666667-42.666666z"
+                            p-id="13111" fill="currentColor"></path>
+                        <path
+                            d="M384 896H213.333333c-46.933333 0-85.333333-38.4-85.333333-85.333333v-170.666667c0-46.933333 38.4-85.333333 85.333333-85.333333h170.666667c46.933333 0 85.333333 38.4 85.333333 85.333333v170.666667c0 46.933333-38.4 85.333333-85.333333 85.333333z m-170.666667-256v170.666667h170.666667v-170.666667H213.333333z"
+                            p-id="13112" fill="currentColor"></path>
+                        <path
+                            d="M695.466667 115.2c17.066667-17.066667 42.666667-17.066667 59.733333 0l149.333333 149.333333c17.066667 17.066667 17.066667 42.666667 0 59.733334l-149.333333 149.333333c-17.066667 17.066667-42.666667 17.066667-59.733333 0l-149.333334-145.066667c-17.066667-17.066667-17.066667-42.666667 0-59.733333l149.333334-153.6z"
+                            p-id="13113" fill="currentColor"></path>
+                        <path
+                            d="M810.666667 896h-170.666667c-46.933333 0-85.333333-38.4-85.333333-85.333333v-170.666667c0-46.933333 38.4-85.333333 85.333333-85.333333h170.666667c46.933333 0 85.333333 38.4 85.333333 85.333333v170.666667c0 46.933333-38.4 85.333333-85.333333 85.333333z m-170.666667-256v170.666667h170.666667v-170.666667h-170.666667z"
+                            p-id="13114" fill="currentColor"></path>
+                    </svg></span>
+                Marketing
+            </div>
+            <h3>Morgan Sweeney</h3>
+            <p>Morgan has collected ants since they were six years old and now has many dozen ants but none in their
+                pants.
+            </p>
+            <button> <svg t="1669718397509" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="2467" width="200" height="200">
+                    <path
+                        d="M928 0H288c-53.02 0-96 42.98-96 96v96H96c-53.02 0-96 42.98-96 96v640c0 53.02 42.98 96 96 96h640c53.02 0 96-42.98 96-96v-96h96c53.02 0 96-42.98 96-96V96c0-53.02-42.98-96-96-96zM724 928H108a12 12 0 0 1-12-12V300a12 12 0 0 1 12-12h84v448c0 53.02 42.98 96 96 96h448v84a12 12 0 0 1-12 12z m192-192H300a12 12 0 0 1-12-12V108a12 12 0 0 1 12-12h616a12 12 0 0 1 12 12v616a12 12 0 0 1-12 12z"
+                        p-id="2468" fill="currentColor"></path>
+                </svg>View project</button>
+        </li>
+        <li class="card" style="--primary-color: #4caf50;">
+            <figure>
+                <img src="https://picsum.photos/1280/600?random=3" alt="">
+            </figure>
+            <div class="subtitle">
+                <span class="icon"><svg t="1669792975412" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="14274" width="200" height="200">
+                        <path
+                            d="M512 832c-213.888 0-384.512-106.688-512-320 129.408-213.312 300.032-320 512-320 211.968 0 382.592 106.688 512 320-127.488 213.312-298.112 320-512 320z m0-64a256 256 0 1 0 0-512 256 256 0 0 0 0 512z m0-128a128 128 0 1 0 0-256 128 128 0 0 0 0 256z"
+                            fill="currentColor" p-id="14275"></path>
+                    </svg></span>
+                Entertainment
+            </div>
+            <h3>How a Tech Worker Fought Back from Being Fired as a Union Organiser</h3>
+            <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et
+                voluptates
+                repudiandae.
+            </p>
+            <button> <svg t="1669718397509" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="2467" width="200" height="200">
+                    <path
+                        d="M928 0H288c-53.02 0-96 42.98-96 96v96H96c-53.02 0-96 42.98-96 96v640c0 53.02 42.98 96 96 96h640c53.02 0 96-42.98 96-96v-96h96c53.02 0 96-42.98 96-96V96c0-53.02-42.98-96-96-96zM724 928H108a12 12 0 0 1-12-12V300a12 12 0 0 1 12-12h84v448c0 53.02 42.98 96 96 96h448v84a12 12 0 0 1-12 12z m192-192H300a12 12 0 0 1-12-12V108a12 12 0 0 1 12-12h616a12 12 0 0 1 12 12v616a12 12 0 0 1-12 12z"
+                        p-id="2468" fill="currentColor"></path>
+                </svg>View project</button>
+        </li>
+
+    </ul>
+</body>
+
+</html>

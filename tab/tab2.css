@@ -1,0 +1,97 @@
+.tab_div {
+    border: #666 solid 1px;
+    padding: 15px 12px;
+}
+
+.tab {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.tab label {
+    flex: 1;
+    padding: 12px 40px 12px 12px;
+    border: #6e6e6e solid 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+input[type='radio'],
+input[type='checkbox'] {
+    position: relative;
+    display: none;
+}
+
+input[type='radio']:after {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background-color: #e0e0e0;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 1px solid #e0e0e0;
+}
+
+input[type='radio']:checked:after {
+    width: 13px;
+    height: 13px;
+    border-radius: 22px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: #ffa500 solid 1px;
+    box-shadow: 0 0 0 6px white, 0 0 0 7px #ffa500;
+    background-color: #ffa500;
+    box-sizing: border-box;
+}
+
+input:checked+.radio_label {
+    border: 2px #FFCC66 solid;
+    background: #FFF8EE;
+    position: relative;
+    padding: 12px 12px 12px 40px;
+}
+
+input:checked+.radio_label::before {
+    position: absolute;
+    content: "";
+    width: 13px;
+    height: 13px;
+    border-radius: 22px;
+    top: 50%;
+    left: 24px;
+    transform: translate(-50%, -50%);
+    border: #ffa500 solid 1px;
+    box-shadow: 0 0 0 6px white, 0 0 0 7px #ffa500;
+    background-color: #ffa500;
+    box-sizing: border-box;
+}
+
+label p {
+    margin: 0;
+}
+
+.tab div {
+    display: none;
+}
+
+input[id="input1"]:checked~.tab_a,
+input[id="input2"]:checked~.tab_b,
+input[id="input3"]:checked~.tab_c {
+    display: block;
+    width: 100%;
+    background: #f0f0f0;
+    padding: 10px 12px;
+}
