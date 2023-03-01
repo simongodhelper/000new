@@ -7,8 +7,8 @@
     <meta name="robots" content="noindex,nofollow">
     <title>Suntory 三得利 健康網路商店</title>
     <link rel="shortcut icon" href="/img/favicon.ico" />
-    <link rel="apple-touch-icon-precomposed" href="https://wellness.suntory.com.tw/img/apple-touch-icon.png" / <meta
-        name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <link rel="apple-touch-icon-precomposed" href="https://wellness.suntory.com.tw/img/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
     <meta name="Description" content="2022回憶博覽會活動" />
     <link href="./css/reset.min.css" rel="stylesheet" type="text/css" media="screen">
     <link rel="stylesheet" type="text/css" href="./css/slick.css" />
@@ -18,7 +18,7 @@
     <script src="./js/slick.js"></script>
 
     <script>
-        window.onload = function () {
+        $(document).ready(function () {
             $('.slider').slick({
                 autoplay: false,
                 autoplaySpeed: 4000,
@@ -31,7 +31,7 @@
                 slidesToScroll: 1,
                 pauseOnHover: false,
             });
-        };
+        });
     </script>
     <style>
         body {
