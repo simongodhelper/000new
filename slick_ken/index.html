@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="./css/slick-theme.min.css" />
+
+    <script type="text/javascript" src="./js/slick.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('.slider').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                arrows: true,
+                dots: true,
+                // infinite: true,
+                autoplaySpeed: 2000
+            });
+        });
+    </script>
+</head>
+
+<body style="padding: 0; margin: 0;">
+    <div class="slider">
+        <a href=""><img src="./img/main_banner01.jpg"></a>
+        <a href=""><img src="./img/main_banner02.jpg"></a>
+        <a href=""><img src="./img/main_banner03.jpg"></a>
+        <a href=""><img src="./img/main_banner01.jpg"></a>
+        <a href=""><img src="./img/main_banner02.jpg"></a>
+        <a href=""><img src="./img/main_banner03.jpg"></a>
+    </div>
+</body>
+
+</html>
