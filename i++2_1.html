@@ -1,0 +1,85 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="oxxo.studio">
+    <meta name="copyright" content="oxxo.studio">
+    <title>i++</title>
+    <style>
+        div {
+            padding: 4px;
+            border: #ccc solid 1px;
+        }
+
+        .label,
+        .label_1 {
+            background: rgb(122, 122, 122);
+            padding: 4px;
+            color: #fff;
+        }
+
+        .active {
+            background: red;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div>
+        <label for="" class="label active">111</label>
+        <label for="" class="label">222</label>
+        <label for="" class="label">333</label>
+        <div class="tab_a">
+            <p>aaaaaaaaaaaaa</p>
+            <p>台北市大同區南京西路62號6樓</p>
+            <p>行動電話：0921111111</p>
+        </div>
+        <div class="tab_b">
+            <p>bbbbbbbbbbbbbb</p>
+            <p>台北市大同區南京西路62號6樓</p>
+            <p>行動電話：0921111111</p>
+            <p>行動電話：0921111111</p>
+        </div>
+        <div class="tab_c">
+            <p>ccccccccccccc</p>
+            <p>台北市大同區南京西路62號6樓</p>
+            <p>行動電話：0921111111</p>
+            <p>行動電話：0921111111</p>
+            <p>行動電話：0921111111</p>
+        </div>
+    </div>
+    <div>
+        <label for="" class="label_1 active">111</label>
+        <label for="" class="label_1">222</label>
+        <label for="" class="label_1">333</label>
+        <label for="" class="label_1">444</label>
+        <label for="" class="label_1">555</label>
+    </div>
+    <script>
+        let label = document.querySelectorAll('.label');
+        for (let i = 0; i < label.length; i++) {
+            label[i].onclick = function () {
+                let j = 0;
+                while (j < label.length) {
+                    label[j++].className = 'label';
+                }
+                label[i].className = 'label active';
+            }
+        }
+
+        let label_1 = document.querySelectorAll('.label_1');
+        for (let i = 0; i < label.length; i++) {
+            label_1[i].onclick = function () {
+                let j = 0;
+                while (j < label.length) {
+                    label_1[j++].className = 'label_1';
+                }
+                label_1[i].className = 'label_1 active';
+            }
+        }
+    </script>
+</body>
+
+</html>

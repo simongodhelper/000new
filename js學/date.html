@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="tw">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <p>What day is today?</p>
+    <p>
+        <script>
+            var day_list = ['日', '一', '二', '三', '四', '五', '六'];
+
+            var date = new Date();
+            var day = date.getDay();
+
+            document.write('Today is 星期' + day_list[day]);
+        </script>
+    </p>
+</body>
+
+</html>

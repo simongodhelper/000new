@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>js學習</title>
+
+<script language="javascript">
+var aNumbers = new Array();
+var sMessage = "你輸入了:\n";
+var iTotal = 0;
+var vUserInput;
+var iArrayIndex = 0;
+do{
+	vUserInput = prompt("輸入一個數字，或者'0'退出","0");
+	aNumbers[iArrayIndex] = vUserInput;
+	iArrayIndex++;
+	iTotal += Number(vUserInput);
+	sMessage += vUserInput + "\n";
+}while(vUserInput != 0)		//當輸入為0（預設值）時退出循環體
+sMessage += "總數:" + iTotal;
+alert(sMessage);
+</script>
+
+</head>
+
+<body>
+</body>
+</html>

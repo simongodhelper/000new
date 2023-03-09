@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>js學習</title>
+<style type="text/css">
+
+table{border-collapse:collapse;width:100%; max-width:1300px;color:#3e3e3e; font-family:微軟正黑體,Arial, Helvetica, sans-serif; margin-top:10px; background:#FFF }
+table td{border:1px solid #bfbfbf; padding:3px; border-bottom:#bfbfbf solid 1px; font-size:14px; }
+table tr:hover{ background:#efefef}
+table th{ border:none;line-height:20px;padding:3px; color:#217098; font-weight:normal; white-space:nowrap; text-align:left;padding:14px; border-bottom:#2d5b9c solid 1px;background:#dfdfdf; text-align:center;border:1px solid #bfbfbf;border-bottom:#68b83b solid 2px;}
+table a{text-decoration:underline!important;color:#e54303;}
+
+</style>
+
+
+</head>
+
+<body>
+<table cellspacing="0">
+<script language="javascript">
+for(var i=1;i<10;i++){			//乘法表一共九行
+	document.write("<tr>");		//每行是table的一行
+    for( var j=1;j<10;j++)			//每行都有9個單元格
+		if(j<=i)				//有內容的單元格
+	        document.write("<td>"+i+"*"+j+"="+(i*j)+"</td>");
+		else					//沒有內容的單元格
+			document.write("<td style='border:none;'>aa</td>");
+    document.write("</tr>");
+}
+</script>
+</table>
+
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>標準体重</title>
+</head>
+<script language="JAVASCRIPT">
+function bmi(weight, height) {
+    bmindx = weight / eval(height * height);
+    return bmindx;
+}
+
+function checkform(form) {
+    if (form.weight.value == null || form.weight.value.length == 0 || form.height.value == null || form.height.value.length == 0) {
+        alert("\n請輸入你的身高體重好嗎?");
+        return false;
+    } else if (parseFloat(form.height.value) <= 40 ||
+        parseFloat(form.height.value) >= 300 ||
+        parseFloat(form.weight.value) <= 10 ||
+        parseFloat(form.weight.value) >= 250) {
+        alert("\n不要鬧了啦!你是怪物啊! \n再鬧.小心我扁你!");
+        ClearForm(form);
+        return false;
+    }
+    return true;
+}
+
+function computeform(form) {
+    if (checkform(form)) {
+        yourbmi = Math.round(bmi(form.weight.value, form.height.value / 100));
+        form.bmi.value = yourbmi;
+        if (yourbmi > 40) {
+            form.my_comment.value = "恐龍?,快去看醫生!";
+        }
+        if (yourbmi > 30 && yourbmi <= 40) {
+            form.my_comment.value = "嗯...或許日本的相撲適合你,我也不知該說甚麼了?";
+        }
+        if (yourbmi > 27 && yourbmi <= 30) {
+            form.my_comment.value = "你很重喔,早晨跑2000公尺,睡前做500個伏地挺身!!";
+        }
+        if (yourbmi > 22 && yourbmi <= 27) {
+            form.my_comment.value = "超出標準了,多運動,控制一下飲食吧.祝福你!";
+        }
+        if (yourbmi >= 21 && yourbmi <= 22) {
+            form.my_comment.value = "真羨慕你.繼續保持下去!最佳女(男)主角換你做做看!!";
+        }
+        if (yourbmi >= 18 && yourbmi < 21) {
+            form.my_comment.value = "未達標準體重,多吃點對你才有好處.加油!";
+        }
+        if (yourbmi >= 16 && yourbmi < 18) {
+            form.my_comment.value = "哇!小心餓死.快去吃些高熱量的食物!";
+        }
+        if (yourbmi < 16) {
+            form.my_comment.value = "皮包骨了,建議你去掛急診並長期住院 ";
+        }
+    }
+    return;
+}
+</script>
+
+<body bgcolor="#FFFFFF">
+    <div align="center">
+        <center>
+            <table border="0">
+                <tr>
+                    <td>
+                        <font color="#FF0000" size="6">標 準 体 重</font>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </div>
+    <hr size="1">
+    <div align="center">
+        <center>
+            <table border="0">
+                <tr>
+                    <td>
+                        <table border="2" cellspacing="1" width="100%" bgcolor="#FFFFC4">
+                            <tr>
+                                <td valign="top">
+                                    <form method="POST" name="BMI">
+                                        <p>身高(公分)
+                                            <input type="text" size="5" name="height" onfocus="this.form.height.value=''">
+                                            <br> 體重(公斤)
+                                            <input type="text" size="5" name="weight" onfocus="this.form.weight.value=''">
+                                            <br>
+                                            <input type="button" value="開始診斷" onclick="computeform(this.form)">
+                                            <br> 指數
+                                            <input type="text" size="5" name="bmi">
+                                            <br> 診斷結果
+                                            <input type="text" size="45" name="my_comment">
+                                        </p>
+                                    </form>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </div>
+</body>
+
+</html>

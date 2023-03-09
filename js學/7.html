@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>JavaScript Demo</title>
+<script type="text/javascript">
+function ran() {
+    var c = document.getElementById("content");
+    var n = document.createElement("strong");//createElement可產生"<>"
+    var message = "Hello, JavaScript!";
+    n.appendChild(document.createTextNode(message));
+    c.appendChild(n);
+}
+</script>
+</head>
+ 
+<body>
+<input id="b" type="button" value="RUN" onclick="ran();">
+<div id="content"></div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+</head>
+<style>
+<!--
+body{
+	background-color:#ffdee0;
+}
+#navigation {
+	width:200px;
+	font-family:Arial;
+}
+#navigation > ul {
+	list-style-type:none;				/* 不顯示項目符號 */
+	margin:0px;
+	padding:0px;
+}
+#navigation > ul > li {
+	border-bottom:1px solid #ED9F9F;	/* 新增下劃線 */
+}
+#navigation > ul > li > a{
+	display:block;						/* 區塊顯示 */
+	padding:5px 5px 5px 0.5em;
+	text-decoration:none;
+	border-left:12px solid #711515;		/* 左邊的粗紅邊 */
+	border-right:1px solid #711515;		/* 右側陰影 */
+}
+#navigation > ul > li > a:link, #navigation > ul > li > a:visited{
+	background-color:#c11136;
+	color:#FFFFFF;
+}
+#navigation > ul > li > a:hover{		/* 鼠標經過時 */
+	background-color:#990020;			/* 改變背景色 */
+	color:#ffff00;						/* 改變文字顏色 */
+}
+
+/* 子選單的CSS樣式 */
+#navigation ul li ul{
+	list-style-type:none;
+	margin:0px;
+	padding:0px 0px 0px 0px;
+}
+#navigation ul li ul li{
+	border-top:1px solid #ED9F9F;
+}
+#navigation ul li ul li a{
+	display:block;
+	padding:3px 3px 3px 0.5em;
+	text-decoration:none;
+	border-left:28px solid #a71f1f;
+	border-right:1px solid #711515;
+}
+#navigation ul li ul li a:link, #navigation ul li ul li a:visited{
+	background-color:#e85070;
+	color:#FFFFFF;
+}
+#navigation ul li ul li a:hover{
+	background-color:#c2425d;
+	color:#ffff00;
+}
+#navigation ul li ul.myHide{	/* 隱藏子選單 */
+	display:none;
+}
+#navigation ul li ul.myShow{	/* 顯示子選單 */
+	display:block;
+}
+-->
+</style>
+
+<body>
+<script language="javascript">
+function change(){
+	//通過父元素li，找到兄弟元素ul
+	var oSecondDiv = this.parentNode.getElementsByTagName("ul")[0];
+	//CSS交替更換來實現顯、隱
+	if(oSecondDiv.className == "myHide")
+		oSecondDiv.className = "myShow";
+	else
+		oSecondDiv.className = "myHide";
+}
+window.onload = function(){
+	var oUl = document.getElementById("listUL");
+	var aLi = oUl.childNodes;	//子元素
+	var oA;
+	for(var i=0;i<aLi.length;i++){
+		//如果子元素為li，且這個li有子選單ul
+		if(aLi[i].tagName == "LI" && aLi[i].getElementsByTagName("ul").length){
+			oA = aLi[i].firstChild;	//找到超鏈接
+			oA.onclick = change;	//動態新增點擊函數
+		}
+	}
+}
+</script>
+</head>
+<body>
+<div id="navigation">
+	<ul id="listUL">
+		<li><a href="#">Home</a></li>
+		<li><a href="#">News</a>
+        	<ul class="myHide">
+            	<li><a href="#">Lastest News</a></li>
+                <li><a href="#">All News</a></li>
+            </ul>
+        </li>
+		<li><a href="#">Sports</a>
+        	<ul class="myHide">
+            	<li><a href="#">Basketball</a></li>
+                <li><a href="#">Football</a></li>
+                <li><a href="#">Volleyball</a></li>
+            </ul>        
+        </li>
+		<li><a href="#">Weather</a>
+        	<ul class="myHide">
+            	<li><a href="#">Today's Weather</a></li>
+                <li><a href="#">Forecast</a></li>
+            </ul>
+        </li>
+		<li><a href="#">Contact Me</a></li>
+	</ul>
+</div>
+
+</body>
+</html>
