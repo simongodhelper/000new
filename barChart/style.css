@@ -1,0 +1,141 @@
+.out {
+    background: #f1f1f1;
+    padding: 20px 0 37px 0;
+}
+
+.barChart_div {
+    opacity: 0.8;
+    background-size: 20px 10%;
+    background-image: repeating-linear-gradient(0deg, #c3c3c3, #c3c3c3 1px, #f1f1f1 1px, #f1f1f1);
+    /* padding: 29px 15px; */
+}
+
+.barChart_in {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    gap: 15px;
+    height: 280px;
+    /* box-sizing: border-box; */
+    /* padding: 15px 0; */
+}
+
+.barChart_in div {
+    border-radius: 50px;
+    background: #ffffff94;
+    flex: 1;
+    position: relative;
+    box-shadow: inset 0px 0px 0px 4px #ccc;
+    /* border: #ababab73 solid 5px; */
+    /* box-sizing: border-box; */
+}
+
+.barChart_in div:before {
+    position: absolute;
+    content: "";
+    background: #fff;
+    width: calc(100% - 8px);
+    border-radius: 50px;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -4px);
+    height: 10px;
+}
+
+.barChart_in div:after {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    font-size: 14px;
+    transform: translate(-50%, 0%);
+}
+
+.barChart_in div.h1:before {
+    height: calc(10% - 5px);
+    box-shadow: inset 0px -2px 12px 11px #d2e9f9;
+}
+
+.barChart_in div.h1:after {
+    content: "10%"
+}
+
+.barChart_in div.h2:before {
+    height: calc(20% - 5px);
+    box-shadow: inset 0px 0px 9px 15px #bbdefb;
+}
+
+.barChart_in div.h2:after {
+    content: "20%"
+}
+
+.barChart_in div.h3:before {
+    height: calc(30% - 5px);
+    box-shadow: inset 0px 0px 9px 15px #90caf9;
+}
+
+.barChart_in div.h3:after {
+    content: "30%"
+}
+
+.barChart_in div.h4:before {
+    height: calc(40% - 5px);
+    box-shadow: inset 0px 0px 9px 15px #64b5f6;
+}
+
+.barChart_in div.h4:after {
+    content: "40%"
+}
+
+.barChart_in div.h5:before {
+    height: calc(50% - 5px);
+    box-shadow: inset 0px 0px 9px 15px #42a5f5;
+}
+
+.barChart_in div.h5:after {
+    content: "50%"
+}
+
+.barChart_in div.h6:before {
+    height: calc(60% - 5px);
+    box-shadow: inset 0px 0px 9px 15px #2196f3;
+}
+
+.barChart_in div.h6:after {
+    content: "60%"
+}
+
+.barChart_in div.h7:before {
+    height: calc(70% - 5px);
+    box-shadow: inset 0px 0px 9px 15px #1678cf;
+}
+
+.barChart_in div.h7:after {
+    content: "70%"
+}
+
+.barChart_in div.h8:before {
+    height: calc(80% - 5px);
+    box-shadow: inset 0px 0px 9px 15px #0e65bb;
+}
+
+.barChart_in div.h8:after {
+    content: "80%"
+}
+
+.barChart_in div.h9:before {
+    height: calc(90% - 5px);
+    box-shadow: inset 0px 0px 9px 15px #0853a9;
+}
+
+.barChart_in div.h9:after {
+    content: "90%"
+}
+
+.barChart_in div.h10:before {
+    height: calc(100% - 8px);
+    box-shadow: inset 0px 0px 9px 15px #001c46;
+}
+
+.barChart_in div.h10:after {
+    content: "100%"
+}
