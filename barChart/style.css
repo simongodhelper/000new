@@ -52,7 +52,7 @@
 
 .barChart_in div.h1:before {
     height: calc(10% - 5px);
-    box-shadow: inset 0px -2px 12px 11px #d2e9f9;
+    box-shadow: inset 0px 0px 9px 15px #d2e9f9;
 }
 
 .barChart_in div.h1:after {

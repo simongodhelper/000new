@@ -11,7 +11,7 @@
             border: #ccc solid 1px;
         }
 
-        .label {
+        label {
             background: rgb(122, 122, 122);
             padding: 4px;
             color: #fff;
@@ -27,23 +27,31 @@
 
 <body>
     <div>
-        <label for="" class="label active">111</label>
-        <label for="" class="label">222</label>
-        <label for="" class="label">333</label>
-        <label for="" class="label">444</label>
-        <label for="" class="label">555</label>
+        <label for="" class="active">111</label>
+        <label for="" class="">222</label>
+        <label for="" class="">333</label>
+        <label for="" class="">444</label>
+        <label for="" class="">555</label>
     </div>
     <script>
-        let label = document.querySelectorAll('.label');
-        for (let i = 0; i < label.length; i++) {
-            label[i].onclick = function () {
-                let j = 0;
-                while (j < label.length) {
-                    label[j++].className = 'label';
-                }
-                label[i].className = 'label active';
-            }
-        }
+        // let label = document.querySelectorAll('.label');
+        // for (let i = 0; i < label.length; i++) {
+        //     label[i].onclick = function () {
+        //         let j = 0;
+        //         while (j < label.length) {
+        //             label[j++].className = 'label';
+        //         }
+        //         label[i].className = 'label active';
+        //     }
+        // }
+        const labels = document.querySelectorAll('label');
+        labels.forEach((label) => {
+            label.addEventListener('click', () => {
+                labels.forEach((AA) => AA.classList.remove('active'));
+                label.classList.add('active');
+            });
+        });
+
     </script>
 </body>
 
