@@ -1,0 +1,24 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <p class="listdate">2023-03-23</p>
+    <script>
+        myFunction();
+
+        function myFunction() {
+            let array = document.getElementsByClassName("listdate");
+            for (let i = 0; i < array.length; i++) {
+                let str = document.getElementsByClassName("listdate")[i].innerHTML;
+                let res = str.replace(/(\d{4})-(0\d|1[0-2])-([0-2]\d|3[01])/g, function (match, p1, p2, p3) {
+                    return p1 + '.' + Number(p2) + '.' + Number(p3);
+                });
+                array[i].innerHTML = res;
+            }
+        }
+    </script>
+</body>
+
+</html>
