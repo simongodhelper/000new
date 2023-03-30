@@ -1,15 +1,12 @@
 <html>
 
-<head>
-
-</head>
+<head></head>
 
 <body>
     <div class="coderecovery_1">
         <p class="listdate">２０２２０</p>
         <b class="listdate">２０２２０</b>
     </div>
-    <span>１，３６０</span>
 
 </body>
 <script>
@@ -17,10 +14,12 @@
     myFunction();
 
     function myFunction() {
-        let array = document.getElementsByTagName("span");
+        let array = document.getElementsByClassName("listdate");
         for (let i = 0; i < array.length; i++) {
-            let str = document.getElementsByTagName("span")[i].innerHTML;
-            let res = str.replace(/[！-～]/g, halfwidthChar => String.fromCharCode(halfwidthChar.charCodeAt(0) - 0xfee0));
+            let str = array[i].innerHTML;
+            let res = str.replace(/[！-～]/g, function (halfwidthChar) {
+                return String.fromCharCode(halfwidthChar.charCodeAt(0) - 0xfee0);
+            });
             array[i].innerHTML = res;
         }
     }
