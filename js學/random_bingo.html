@@ -29,6 +29,20 @@
 		</script>
 	</table>
 	<br>
+	<table width="100%" border="1" cellspacing="0" cellpadding="0" style="border:#ccc solid 1px">
+		<script type="text/javascript">
+			Array.from({ length: 5 }).forEach(function () {
+				document.write("<tr>");
+				var randomNumbers = Array.from({ length: 5 }, getRandom);
+				document.write("<td>" + randomNumbers.join("</td><td>") + "</td>");
+				document.write("</tr>");
+			});
+
+			function getRandom() {
+				return Math.floor(Math.random() * 50) + 1;
+			}
+		</script>
+	</table>
 	<!-- <table width="100%" border="1" cellspacing="0" cellpadding="0" style="border:#ccc solid 1px">
 		<script type="text/javascript">
 			for (var i = 1; i <= 5; i++) {

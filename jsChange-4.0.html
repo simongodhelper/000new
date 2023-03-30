@@ -1,0 +1,22 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <p class="listdate">2023-03-23</p>
+    <script>
+        myFunction();
+
+        function myFunction() {
+            let array = document.getElementsByClassName("listdate");
+            for (let i = 0; i < array.length; i++) {
+                let str = document.getElementsByClassName("listdate")[i].innerHTML;
+                let res = str.replace(/(^|\/|-)0+/g, "$1").replace(/-/g, "."); // modified this line
+                array[i].innerHTML = res;
+            }
+        }
+    </script>
+</body>
+
+</html>

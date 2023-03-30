@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator</title>
+    <style>
+        /* Calculator Styles */
+        .calculator {
+            width: 300px;
+            border: 2px solid #000000;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 0 auto;
+        }
+
+        .result {
+            height: 50px;
+            font-size: 24px;
+            text-align: right;
+            background-color: #f4f4f4;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding-right: 10px;
+        }
+
+        button {
+            width: 60px;
+            height: 60px;
+            font-size: 18px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .operator {
+            background-color: #f4a261;
+            color: white;
+        }
+
+        .clear {
+            background-color: #e76f51;
+            color: white;
+        }
+
+        .equals {
+            background-color: #2a9d8f;
+            color: white;
+            width: 130px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <div class="result"></div>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button class="operator">/</button>
+        <br />
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button class="operator">*</button>
+        <br />
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button class="operator">-</button>
+        <br />
+        <button>0</button>
+        <button>.</button>
+        <button class="clear">C</button>
+        <button class="operator">+</button>
+        <br />
+        <button class="equals">=</button>
+    </div>
+
+    <script>
+        // Calculator JavaScript
+        const result = document.querySelector(".result");
+        const clear = document.querySelector(".clear");
+        const equals = document.querySelector(".equals");
+
+        function calculate() {
+            result.textContent = eval(result.textContent);
+        }
+
+        equals.addEventListener("click", calculate);
+
+        clear.addEventListener("click", () => {
+            result.textContent = "";
+        });
+
+        const buttons = document.querySelectorAll("button:not(.clear):not(.equals)");
+
+        buttons.forEach((button) => {
+            button.addEventListener("click", (event) => {
+                result.textContent += event.target.textContent;
+            });
+        });
+    </script>
+</body>
+
+</html>
