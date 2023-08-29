@@ -1,0 +1,9 @@
+httpscodepen.iodavecar21penRwovWvB
+
+dir="rtl"
+
+<div class="carousel-rtl" dir="rtl">
+
+js
+
+rtl: true,

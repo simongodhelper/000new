@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<title>inset</title>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+    .box {
+        /* background: #fff; */
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+        border: 20px solid transparent;
+    }
+
+    .box1 {
+        background-image: conic-gradient(from 270deg, #fd6330, #3232da);
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+        border-radius: 20% 20% 20% 20% / 50%;
+        position: relative;
+        padding: 4px;
+    }
+
+    .box1::before {
+        position: absolute;
+        content: '';
+        width: inherit;
+        height: inherit;
+        background: #fff;
+        border-radius: 20% 20% 20% 20% / 50%;
+    }
+
+    .box_img {
+        /* -moz-border-image: -moz-conic-gradient(from 270deg, #fd6330, #3232da);
+        -webkit-border-image: -webkit-conic-gradient(from 270deg, #fd6330, #3232da); */
+        border-image: conic-gradient(from 270deg, #fd6330, #3232da);
+        border-image-slice: 1;
+    }
+
+    /**/
+    .gradient-box {
+        display: flex;
+        align-items: center;
+        width: 90%;
+        margin: auto;
+        max-width: 22em;
+        position: relative;
+        padding: 30px;
+        box-sizing: border-box;
+        color: #fff;
+        background: #000;
+        background-clip: padding-box;
+        /* !importanté */
+        border: solid 5px transparent;
+        /* !importanté */
+        border-radius: 1em;
+    }
+
+    .gradient-box:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        margin: -5px;
+        /* !importanté */
+        border-radius: inherit;
+        /* !importanté */
+        background: linear-gradient(to right, red, orange);
+    }
+</style>
+
+<body style="background: #ccc;">
+    <div class="box1"></div>
+    <br>
+    <div class="box box_img">
+        13131
+    </div>
+    <br>
+    <div class="gradient-box">
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum, lorem vel tincidunt imperdiet,
+            nibh
+            elit laoreet felis, a bibendum nisl tortor non orci. Donec pretium fermentum felis, quis aliquet est rutrum
+            ut.
+            Integer quis massa ut lacus viverra pharetra in eu lacus. Aliquam tempus odio adipiscing diam pellentesque
+            rhoncus. Curabitur a bibendum est. </p>
+
+    </div>
+
+</body>
+
+</html>

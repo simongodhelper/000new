@@ -1,22 +1,38 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>無標題文件</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>決定命運的一刻</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <script type="text/javascript">
-
-function getRandom()
-{
-	var x=document.getElementById("aa");
-	x.innerHTML = parseInt(Math.random()*70);
-}
-
+	function getRandom() {
+		var x = document.getElementById("aa");
+		var options = ['是', '否', '不知道'];
+		var randomIndex = Math.floor(Math.random() * options.length);
+		x.innerHTML = options[randomIndex];
+	}
 </script>
-<body>
+<style>
+	input {
+		width: -webkit-fill-available;
+		padding: 24px;
+		font-size: 7vw;
+		font-weight: bold;
+	}
 
-<input type="button" value="暗暗看" onclick="getRandom();"/>
-<p id="aa" >aaaaaaaaaaa</p>
+	p {
+		text-align: center;
+		font-size: 8vw;
+		color: red;
+		font-weight: bold;
+	}
+</style>
+
+<body>
+	<input type="button" value="決定命運的一刻" onclick="getRandom();" />
+	<p id="aa"></p>
 
 </body>
+
 </html>

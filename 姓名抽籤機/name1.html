@@ -1,0 +1,90 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>決定命運的一刻</title>
+</head>
+
+<script type="text/javascript">
+    var a = ['是', '否', '不知道'];
+
+    var t
+    function timedCount() {
+        document.getElementById('txt').innerHTML = getRandom();
+        t = setTimeout("timedCount()", 10)
+    }
+
+    function stopCount() {
+        clearTimeout(t);
+        document.getElementById('start').disabled = false; // re-enable the button
+    }
+
+    function getRandom() {
+        return a[Math.floor(a.length * Math.random())]
+    }
+
+    function startCount() {
+        document.getElementById('start').disabled = true; // disable the button
+        timedCount();
+    }
+</script>
+<style type="text/css">
+    body {
+        text-align: center;
+        background: #000;
+        padding: 0;
+    }
+
+    /*outline*/
+    .outline {
+        width: 100px;
+        height: 90px;
+        background: #666;
+        outline: #cccccc solid 2px;
+        border-radius: 1px;
+        display: inline-block;
+        box-shadow: 0 0 0 30px #cd0000;
+        margin: 30px;
+        font-size: 30px;
+        line-height: 90px;
+        color: #fff
+    }
+
+    .outline:active {
+        background: #ccc
+    }
+
+    h1 {
+        color: #ccc;
+        font-size: 36px;
+    }
+
+    p {
+        height: 150px;
+        border: #ff0000 dotted 5px;
+        margin: 15px;
+        color: #ff0000;
+        background: #fff;
+        line-height: 150px;
+        font-weight: bold;
+        font-size: 50px
+    }
+</style>
+
+
+<body onselectstart="return false">
+    <h1>決定命運的一刻</h1>
+
+    <p id="txt"></p>
+
+    <button id="start" class=" outline" onclick="startCount()">Start</button>
+    <button onclick="stopCount()" class=" outline">Stop</button>
+
+
+
+</body>
+
+</html>

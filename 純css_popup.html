@@ -96,18 +96,36 @@
             background-color: rgba(0, 0, 0, .7);
             content: "";
             cursor: default;
+
+        }
+
+        .aa1:hover {
+            background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 99%, rgba(0, 0, 0, 0) 99%, rgba(0, 0, 0, 1) 99%);
         }
     </style>
 
+    <!-- if你用onclick的方式，要用js來控制，但是如果你用a:target，.lightbox:target在target狀態時改變，就不用用js來控制了 -->
+    <!-- <script>
+    function openLightbox(id) {
+        var lightbox = document.getElementById(id);
+        lightbox.classList.add("open");
+    }
 
+    function closeLightbox(id) {
+        var lightbox = document.getElementById(id);
+        lightbox.classList.remove("open");
+    }
+</script> -->
 
 </head>
 
 <body>
-
+    <p class="aa1">利用a:target，.lightbox:target在target狀態時改變，不能用onclick的方式</p>
     <ul>
         <li><a href="#example1">Open example #1</a></li>
         <li><a href="#example2">Open example #2</a></li>
+        <!-- <li onclick="openLightbox('example1')">Open example #1</li>
+        <li onclick="openLightbox('example2')">Open example #2</li> -->
     </ul>
 
     <div class="lightbox" id="example1">

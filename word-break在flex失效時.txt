@@ -1,0 +1,4 @@
+word-break: break-all在flex失效時：
+
+word-break: break-all;
+white-space: break-spaces;
