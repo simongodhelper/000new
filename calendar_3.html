@@ -86,12 +86,13 @@
         const cells = document.querySelectorAll('td');
 
         // Set the target date to "2024/3/25"
-        const targetDate = new Date('2024-03-25');
+        const targetDate = new Date('2024-03-30');
 
         // Get the day of the week for the target date
         const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         const dayOfWeekIndex = targetDate.getDay();
         const dayOfWeek = daysOfWeek[dayOfWeekIndex];
+        
         console.log(dayOfWeek);
 
         // Find the index of the <td> element in the third <tr> for the targetDate
