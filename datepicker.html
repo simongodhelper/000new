@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jDatapicker JQuery</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="./jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  
+  <script>
+    $(function() {
+        var startDate = new Date(2024, 2, 20); // Start date: 3/20/2024
+        var endDate = new Date(2024, 3, 5); // End date: 4/24/2024
+        var numberOfMonths = (startDate.getMonth() === endDate.getMonth()) ? 1 : 2;
+
+        $( "#datepicker" ).datepicker({
+            numberOfMonths: numberOfMonths,
+            minDate: startDate,
+            maxDate: endDate,
+            dateFormat: 'mm/dd',
+            monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+            dayNamesMin: ['日', '一', '二', '三', '四', '五', '六'],
+            beforeShow: function(input, inst) {
+                inst.dpDiv.appendTo('.contents'); // Append the datepicker to the contents div
+            }
+        });
+        
+        function show_dp(){
+            $( "#datepicker" ).datepicker('show'); // Show the datepicker
+        }
+        
+        show_dp(); // Call show_dp() to display the datepicker when the page loads
+
+        $("#datepicker").on("focus", function () {
+            $(this).datepicker("show");
+        });
+    });
+    </script>
+  <style>
+    .contents{
+        padding: 2em;
+        
+    }
+    .ui-widget-content{
+        border: none;
+    }
+    #ui-datepicker-div {
+        display: flex !important;
+        flex-wrap: wrap;
+        position: inherit!important;
+        top: inherit!important;
+        left: inherit!important;
+        width: auto!important;
+        margin: auto;
+        justify-content: center;
+    }
+    
+    .ui-datepicker .ui-datepicker-header{
+        width: 100%;
+    }
+    .ui-datepicker-prev,
+    .ui-datepicker-next,
+    .ui-datepicker-row-break{
+        display: none;
+    }
+    .ui-datepicker-group{
+        width: auto;
+        max-width: 400px;
+    }
+    .ui-datepicker-group-last{
+        margin-left: 20px;
+    }
+    .ui-datepicker-multi-2 .ui-datepicker-group{
+        width: auto!important;;
+        flex: 1!important;
+    }
+    @media only screen and (max-width: 768px) {
+        #ui-datepicker-div{
+            flex-direction: column;
+        }
+        .ui-datepicker-group-last{
+            margin-left: 0px;
+            margin-top: 2vw;
+        }
+        .ui-datepicker-group{
+            max-width: 100%;
+        }
+    }
+  </style>
+</head>
+<body>
+ 
+<div class="contents">
+    <p>Date: <input type="text" id="datepicker"></p>
+</div>
+
+ 
+ 
+</body>
+</html>

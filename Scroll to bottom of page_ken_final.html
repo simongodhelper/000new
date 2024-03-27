@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll to bottom of page</title>
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js"></script>
+    <style>
+        .head_scroll {
+            display: block;
+            position: inherit !important;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .head_scroll {
+                position: fixed !important;
+                top: 0px;
+                z-index: 10000 !important;
+                animation: fade 0.3s linear;
+                width: 100%;
+                background: #fff000;
+            }
+
+            @keyframes fade {
+                from {
+                    opacity: 0;
+                }
+
+                to {
+                    opacity: 1;
+                }
+            }
+
+        }
+    </style>
+    <script type="text/javascript">
+        let lastScrollTop = 0;
+        $(window).on('scroll', function () {
+            if ($(window).width() <= 767) {
+                const scrollTop = $(this).scrollTop();
+                if (scrollTop < lastScrollTop) {
+                    $("#common_header_wrap").addClass('head_scroll');
+                }
+                if (scrollTop > lastScrollTop) {
+                    $("#common_header_wrap").removeClass('head_scroll');
+                }
+                lastScrollTop = scrollTop;
+                $(window).scroll(function () {
+                    if ($(window).scrollTop() <= 200) {
+                        $("#common_header_wrap").removeClass('head_scroll');
+                    }
+                });
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div id="common_header_wrap" style="height: 100px;">header</div>
+    <div style="height: 2000px; background:red;"></div>
+</body>
+
+</html>

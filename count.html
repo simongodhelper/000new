@@ -1,0 +1,65 @@
+<html>
+
+<head>
+
+
+
+
+</head>
+
+<body>
+    <p class="w1">w1w1w1w1w1</p>
+    <p class="w2">w2w2w2w2w2w2</p>
+
+    <p class="count1"></p>
+    <div class="count">
+        1,000
+    </div>
+
+    <p class="count1_sp"></p>
+    <div class="count_sp">
+        1,500
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const divNumber = parseInt(document.querySelector('.count').innerText.replace(/,/g, ''), 10);
+        const percentage = (divNumber / 3000) * 100;
+        const countValue = parseInt(document.querySelector('.count').innerText);
+        if (countValue === 0) {
+            document.querySelector('.w1').style.display = 'none';
+            document.querySelector('.w2').style.display = 'block';
+        } else {
+            document.querySelector('.w1').style.display = 'block';
+            document.querySelector('.w2').style.display = 'none';
+        }   
+        document.querySelector('.count').style.width = percentage + '%';
+               
+        const pNumber = 3000 - divNumber;
+        document.querySelector('.count1').innerText = pNumber.toLocaleString();
+        });
+        
+        
+        
+        document.addEventListener('DOMContentLoaded', function() {
+        const divNumber = parseInt(document.querySelector('.count_sp').innerText.replace(/,/g, ''), 10);
+        const percentage = (divNumber / 3000) * 100;
+        const countSpValue = parseInt(document.querySelector('.count_sp').innerText);
+        if (countSpValue === 0) {
+            document.querySelector('.w1').style.display = 'none';
+            document.querySelector('.w2').style.display = 'block';
+        } else {
+            document.querySelector('.w1').style.display = 'block';
+            document.querySelector('.w2').style.display = 'none';
+        } 
+        document.querySelector('.count_sp').style.width = percentage + '%';
+               
+        const pNumber = 3000 - divNumber;
+        document.querySelector('.count1_sp').innerText = pNumber.toLocaleString();
+        });
+        
+</script>
+
+</body>
+
+</html>

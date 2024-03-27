@@ -1,0 +1,61 @@
+<html>
+
+<head>
+
+
+
+
+</head>
+
+<body>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const divNumber = parseInt(document.querySelector('.count').innerText);
+            const percentage = (divNumber / 3000) * 100;
+                const countValue = parseInt(document.querySelector('.count').innerText);
+                if (countValue === 0) {
+                    document.querySelector('.pc_txt').style.display = 'none';
+                    document.querySelector('.pc_txt1').style.display = 'block';
+                } 
+                if (countValue > 0 && countValue < 1) {
+                    document.querySelector('.pc_txt').style.display = 'block';
+                    document.querySelector('.pc_txt1').style.display = 'none';
+                }
+                if (countValue >1) {
+                    document.querySelector('.progress_bar_div .pc').style.display = 'none';
+                }
+    
+                document.querySelector('.count').style.width = percentage + '%';
+                       
+                const pNumber = 3000 - divNumber;
+                document.querySelector('.count1').innerText = pNumber;
+            });
+           
+        document.addEventListener('DOMContentLoaded', function() {
+            const divNumber = parseInt(document.querySelector('.count_sp').innerText);
+            const percentage = (divNumber / 3000) * 100;
+                const countSpValue = parseInt(document.querySelector('.count_sp').innerText);
+                if (countSpValue === 0) {
+                    document.querySelector('.sp_txt').style.display = 'none';
+                    document.querySelector('.sp_txt1').style.display = 'block';
+                }
+                if (countValue > 0 && countValue < 1){
+                    document.querySelector('.sp_txt').style.display = 'block';
+                    document.querySelector('.sp_txt1').style.display = 'none';
+                }
+                if (countValue >1) {
+                    document.querySelector('.progress_bar_div .sp').style.display = 'none';
+                }
+                document.querySelector('.count_sp').style.width = percentage + '%';
+                       
+                const pNumber = 3000 - divNumber;
+                document.querySelector('.count1_sp').innerText = pNumber;
+            });
+           
+    </script>
+    
+
+</body>
+
+</html>

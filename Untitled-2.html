@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background: #f0f0f0;
+            margin: 0;
+        }
+
+        .box {
+            position: relative;
+            overflow: hidden;
+            height: 150px;
+            width: 250px;
+            margin: auto;
+        }
+
+        .box:before {
+            box-shadow: 0 0 0 1000px #f16b6b;
+            border-radius: 100%;
+            position: absolute;
+            bottom: -50px;
+            height: 100px;
+            right: -50px;
+            width: 100px;
+            z-index: -10;
+            content: '';
+        }
+
+        /* .box::after {
+            box-shadow: 0 0 0 1000px #f16b6b;
+            border-radius: 100%;
+            position: absolute;
+            bottom: -50px;
+            height: 100px;
+            left: -50px;
+            width: 100px;
+            z-index: -1;
+            content: '';
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

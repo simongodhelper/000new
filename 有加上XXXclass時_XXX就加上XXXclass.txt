@@ -1,0 +1,7 @@
+我想要在#common_header_wrap有class'head_scroll'時，把.modal_container加上class'whenScroll'
+
+<script>
+    if ($("#common_header_wrap").hasClass('head_scroll')){
+        $(".modal_container").addClass('whenScroll');
+    }
+</script>

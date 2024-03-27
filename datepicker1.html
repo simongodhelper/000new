@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Monthly Calendar</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <style>
+    .contents {
+      padding: 2em;
+    }
+    .ui-widget-content {
+      border: none;
+    }
+    #ui-datepicker-div {
+      display: flex !important;
+      flex-wrap: wrap;
+      position: inherit !important;
+      top: inherit !important;
+      left: inherit !important;
+      width: auto !important;
+      margin: auto;
+      justify-content: center;
+    }
+    .ui-datepicker .ui-datepicker-header {
+      width: 100%;
+    }
+    .ui-datepicker-prev,
+    .ui-datepicker-next,
+    .ui-datepicker-row-break {
+      display: none;
+    }
+    .ui-datepicker-group {
+      width: auto;
+      max-width: 400px;
+    }
+    .ui-datepicker-group-last {
+      margin-left: 20px;
+    }
+    .ui-datepicker-multi-2 .ui-datepicker-group {
+      width: auto !important;;
+      flex: 1 !important;
+    }
+    @media only screen and (max-width: 768px) {
+      #ui-datepicker-div {
+        flex-direction: column;
+      }
+      .ui-datepicker-group-last {
+        margin-left: 0px;
+        margin-top: 2vw;
+      }
+      .ui-datepicker-group {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="contents">
+  <p>Date: <input type="text" id="datepicker"></p>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  $(function() {
+    var startDate = new Date(); 
+    var endDate = new Date(); 
+    var numberOfMonths = (startDate.getMonth() === endDate.getMonth()) ? 1 : 2;
+
+    $("#datepicker").datepicker({
+      numberOfMonths: numberOfMonths,
+      minDate: startDate,
+      maxDate: endDate,
+      dateFormat: 'mm/dd',
+      monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+      dayNamesMin: ['日', '一', '二', '三', '四', '五', '六'],
+      beforeShowDay: function(date) {
+        var dDay = new Date(2024, 2, 27); // D day: 3/27/2024
+        var daysDifference = Math.floor((date - dDay) / (1000 * 60 * 60 * 24)); // Calculate difference in days
+        return [(Math.abs(daysDifference) <= 7), '']; // Show 7 days before and after the date
+    },
+      beforeShow: function(input, inst) {
+        inst.dpDiv.appendTo('.contents');
+      }
+    });
+
+    $("#datepicker").focus(function() {
+      $(this).datepicker("show");
+    });
+  });
+</script>
+</body>
+</html>

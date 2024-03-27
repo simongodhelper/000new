@@ -1,0 +1,73 @@
+<html>
+
+<head>
+
+
+
+
+</head>
+
+<body>
+    <p class="pc_txt">w1w1w1w1w1</p>
+    <p class="pc_txt1">w2w2w2w2w2w2</p>
+
+    <p class="count1"></p>
+    <div class="count">
+        $!number.format('###,###', ${total})
+        <!--//數值轉成加了","-->
+    </div>
+
+    <p class="count1_sp"></p>
+    <div class="count_sp">
+        1,500
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const divNumber = parseInt(document.querySelector('.count').innerText.replace(/,/g, ''), 10);//把加了","的字串，轉成數值
+            $(".progress_bar_div.pc").hide();
+            if (divNumber < 3000) {
+                if (window.matchMedia("only screen and (max-width:767px)").matches) {//寬度大於767，.progress_bar_div.pc >> show
+                } else {
+                    $(".progress_bar_div.pc").show();
+                }
+                const percentage = (divNumber / 3000) * 100;
+                const countValue = parseInt(document.querySelector('.count').innerText);
+                if (countValue === 0) {
+                    document.querySelector('.pc_txt').style.display = 'none';
+                    document.querySelector('.pc_txt1').style.display = 'block';
+                } else {
+                    document.querySelector('.pc_txt').style.display = 'block';
+                    document.querySelector('.pc_txt1').style.display = 'none';
+                }
+                document.querySelector('.count').style.width = percentage + '%';
+
+                const pNumber = 3000 - divNumber;
+                document.querySelector('.count1').innerText = pNumber.toLocaleString();//轉成加了","
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const divNumber = parseInt(document.querySelector('.count_sp').innerText.replace(/,/g, ''), 10);//把加了","的字串，轉成數值
+            $(".progress_bar_div.sp").hide();
+            if (divNumber < 3000) {
+                if (window.matchMedia("only screen and (max-width:767px)").matches) {//寬度小於767，.progress_bar_div.sp >> show
+                    $(".progress_bar_div.sp").show();
+                }
+                const percentage = (divNumber / 3000) * 100;
+                const countSpValue = parseInt(document.querySelector('.count_sp').innerText);
+                if (countSpValue === 0) {
+                    document.querySelector('.sp_txt').style.display = 'none';
+                    document.querySelector('.sp_txt1').style.display = 'block';
+                } else {
+                    document.querySelector('.sp_txt').style.display = 'block';
+                    document.querySelector('.sp_txt1').style.display = 'none';
+                }
+                document.querySelector('.count_sp').style.width = percentage + '%';
+
+                const pNumber = 3000 - divNumber;
+                document.querySelector('.count1_sp').innerText = pNumber.toLocaleString();//轉成加了","
+            }
+        });
+
+    </script>

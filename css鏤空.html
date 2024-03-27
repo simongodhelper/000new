@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>镂空测试</title>
+    <style>
+        body {
+            height: 100%;
+            width: 100%;
+            background: url('https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-size: cover;
+        }
+
+        .outer {
+            height: 300px;
+            width: 300px;
+            background: transparent;
+            overflow: hidden;
+        }
+
+        .inner {
+            position: relative;
+            left: 150px;
+            top: 35px;
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            box-shadow: rgba(255, 255, 255, 1) 0 0 0 2017px;
+            z-index: 100;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+
+
+</body>
+
+</html>

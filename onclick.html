@@ -1,0 +1,29 @@
+<html>
+
+<head>
+
+
+
+
+</head>
+<style>
+    .txt1{
+        display: none;
+    }
+</style>
+
+<body>
+
+
+    <p class="txt1">txt1</p>
+    <p class="txt2">txt2</p>        
+    <button id="btn_close">button</button>
+    <div class="submit" id="submit">submit</div>
+    <script>
+        document.getElementById('submit').addEventListener('click', function() {
+            document.querySelector('.txt1').style.display = 'block';
+        });
+        document.getElementById('btn_close').addEventListener('click', function() {
+            document.querySelector('.txt2').style.display = 'none';
+        });
+    </script>
