@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Monthly Calendar</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid black;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Date: <input type="text" id="datepicker" class=""></p>
+    <table>
+        <tr>
+            <td>日</td>
+            <td>一</td>
+            <td>二</td>
+            <td>三</td>
+            <td>四</td>
+            <td>五</td>
+            <td>六</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr class="number">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="number">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="number">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="number">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+        const cells = document.querySelectorAll('tr.number td');
+        const targetDate = new Date('2024-04-04');
+
+        const daysOfWeek = [];
+        const dayOfWeekIndex = targetDate.getDay();
+        const dayOfWeek = daysOfWeek[dayOfWeekIndex];
+
+        const today = new Date();
+
+        const minTargetDate = new Date(today);
+        minTargetDate.setDate(today.getDate() + 2);
+
+        cells.forEach((cell, index) => {
+            let currentDate = new Date(targetDate);
+            currentDate.setDate(targetDate.getDate() + (index - dayOfWeekIndex) - 7); 
+
+            let month = currentDate.getMonth() + 1; 
+            let day = currentDate.getDate(); 
+
+            if (day > 31) {
+                day = day - 31;
+            } else if (day < 1) {
+                day = 31 + day;
+            }
+
+            if (currentDate <= minTargetDate) {
+                cell.textContent = '-';
+            } else {
+                if (index >= dayOfWeekIndex - 7 && index < dayOfWeekIndex + 15) { 
+                    if (cell.textContent !== '-') {
+                        cell.style.cursor = 'pointer';
+                    }
+                    if (index < dayOfWeekIndex) {
+                        cell.textContent = '-';
+                    } else {
+                        cell.textContent = month + '/' + day;
+                        cell.addEventListener('click', function () {
+                            document.getElementById('datepicker').value = month + '/' + day;
+                        });
+                    }
+                } else {
+                    cell.textContent = '-';
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
