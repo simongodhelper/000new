@@ -106,13 +106,11 @@
                 cell.textContent = '-';
             } else {
                 if (index >= dayOfWeekIndex - 7 && index < dayOfWeekIndex + 15) { 
-                    if (cell.textContent !== '-') {
-                        cell.style.cursor = 'pointer';
-                    }
                     if (index < dayOfWeekIndex) {
                         cell.textContent = '-';
                     } else {
                         cell.textContent = month + '/' + day;
+                        cell.style.cursor = 'pointer';
                         cell.addEventListener('click', function () {
                             document.getElementById('datepicker').value = month + '/' + day;
                         });
