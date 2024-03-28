@@ -93,6 +93,7 @@
             let currentDate = new Date(targetDate);
             currentDate.setDate(targetDate.getDate() + (index - dayOfWeekIndex) - 7); 
 
+            let year = currentDate.getFullYear(); 
             let month = currentDate.getMonth() + 1; 
             let day = currentDate.getDate(); 
 
@@ -112,7 +113,7 @@
                         cell.textContent = month + '/' + day;
                         cell.style.cursor = 'pointer';
                         cell.addEventListener('click', function () {
-                            document.getElementById('datepicker').value = month + '/' + day;
+                            document.getElementById('datepicker').value = year + '/'+ month + '/' + day;
                         });
                     }
                 } else {
