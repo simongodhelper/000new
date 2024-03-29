@@ -78,12 +78,10 @@
 
     <script>
         const cells = document.querySelectorAll('tr.number td');
-        const targetDate = new Date('2024-04-02');
+        const targetDate = new Date('2024-04-04');
 
-        const daysOfWeek = [];
         const dayOfWeekIndex = targetDate.getDay();
-        const dayOfWeek = daysOfWeek[dayOfWeekIndex];
-
+        const dayOfWeek = [dayOfWeekIndex];
         const today = new Date();
 
         const minTargetDate = new Date(today);
