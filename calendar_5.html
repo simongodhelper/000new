@@ -14,11 +14,15 @@
             height: 50px;
             text-align: center;
         }
+        .alert{
+            display: none;
+        }
     </style>
 </head>
 
 <body>
-    <p>Date: <input type="text" id="datepicker" class=""></p>
+    <input type="text" id="datepicker" class="">
+    <p class="alert">123</p>
     <table>
         <tr>
             <td>日</td>
@@ -77,8 +81,16 @@
     </table>
 
     <script>
+        const input = document.getElementById('datepicker');
+        const alertText = document.querySelector('.alert');
+
+        if (input.value === '') {
+            alertText.style.display = 'block';
+        } else {
+            alertText.style.display = 'none';
+        }
         const cells = document.querySelectorAll('tr.number td');
-        const targetDate = new Date('2024-04-04');
+        const targetDate = new Date('2024-05-04');
 
         const dayOfWeekIndex = targetDate.getDay();
         const today = new Date();
