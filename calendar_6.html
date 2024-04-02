@@ -45,32 +45,34 @@
             text-align: center;
             text-indent: 7px;
             font-weight: bold;
-            margin-top: 25px!important;
+            margin-top: 25px !important;
             margin: auto;
             cursor: pointer;
         }
 
         .submit:hover,
-        .submit:active{
-            background: linear-gradient(to top, #ff4a00 0%, #ff0d00 100%); 
+        .submit:active {
+            background: linear-gradient(to top, #ff4a00 0%, #ff0d00 100%);
         }
 
         .d_b {
             display: block !important;
         }
 
-        .alert{
+        .alert {
             display: none;
             text-align: center;
         }
-        .alert p{
+
+        .alert p {
             position: relative;
             display: inline-block;
             color: #cc0000;
             font-weight: bold;
             font-size: 16px;
         }
-        .alert p::before{
+
+        .alert p::before {
             position: absolute;
             content: "";
             top: -1px;
@@ -80,7 +82,7 @@
             background: url(./alert.svg) no-repeat;
         }
 
-        .calender_table{
+        .calender_table {
             width: 100%;
             border-spacing: 5px;
         }
@@ -96,7 +98,7 @@
             font-weight: bold;
         }
 
-        .calender_table td{
+        .calender_table td {
             background: #F4F4F4;
             color: #0072EF;
             line-height: 60px;
@@ -106,7 +108,7 @@
             font-weight: bold;
         }
 
-        .calender_table .no1 td{
+        .calender_table .no1 td {
             color: #222;
         }
 
@@ -124,11 +126,11 @@
             color: #fff;
         }
 
-        .calender_table .date{
+        .calender_table .date {
             cursor: pointer;
         }
 
-        .calender_table .date:hover{
+        .calender_table .date:hover {
             background: #DDEEFF;
         }
 
@@ -148,9 +150,11 @@
             right: -30px;
             cursor: pointer;
         }
+
         .btn_close_x:hover {
             background: #FF4000;
         }
+
         .btn_close_x::before {
             content: "";
             width: 60px;
@@ -163,13 +167,35 @@
             z-index: 999;
         }
 
+        .date_change {
+            background: #eef6ff;
+            border-radius: 8px;
+            color: #0072ef;
+            text-align: center;
+            margin-top: 0 !important;
+            margin-bottom: 14px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 12px 60px;
+            border: none;
+        }
+
+        .date_change:active,
+        .date_change:hover {
+            background: #0072ef;
+            color: white;
+        }
+
         @media only screen and (max-width: 768px) {
-            .calender_table{
+            .calender_table {
                 border-spacing: 2px;
             }
-            .calender_table td{
+
+            .calender_table td {
                 line-height: 45px;
             }
+
             .mask_in {
                 width: calc(100% - 50px);
                 top: 50%;
@@ -182,33 +208,40 @@
                 text-align: center;
                 font-weight: 300;
             }
-            .submit{
-                margin-top: 10px!important;
+
+            .submit {
+                margin-top: 10px !important;
             }
-            .calender_table td{
+
+            .calender_table td {
                 font-size: 10px;
             }
-            .alert p{
+
+            .alert p {
                 margin: 0;
                 padding-left: 15px;
             }
-            .alert p::before{
+
+            .alert p::before {
                 top: 3px;
                 left: -13px;
             }
+
             .btn_close_x {
                 width: 50px;
                 height: 50px;
                 top: -38px;
                 right: -17px;
             }
+
             .btn_close_x:hover {
                 background: #FF4000;
             }
+
             .btn_close_x::before {
                 width: 50px;
                 height: 50px;
-                
+
             }
         }
     </style>
@@ -217,15 +250,23 @@
 </head>
 
 <body>
-    <button type="button" id="calendar">預定配達日期變更</button>
+    <button type="button" id="calendar" class="date_change">預定配達日期變更</button>
     <div class="mask"></div>
     <div class="mask_in">
         <div class="btn_close_x"></div>
-        <input type="text" id="datepicker" class="" style="display: none;">
-        <div class="alert"><p>請點選日期</p></div>
+        <input type="text" id="datepicker" class="" style="display: block;">
+        <div class="alert">
+            <p>請點選日期</p>
+        </div>
         <table class="calender_table">
             <tr class="weeklabel">
-                <th class="sun">日</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th class="sat">六</th>
+                <th class="sun">日</th>
+                <th>一</th>
+                <th>二</th>
+                <th>三</th>
+                <th>四</th>
+                <th>五</th>
+                <th class="sat">六</th>
             </tr>
             <tr class="no1">
                 <td>-</td>
@@ -309,11 +350,11 @@
                 cells.forEach((c) => {
                     c.classList.remove('clicked');
                 });
-                
+
                 if (alertText.style.display === 'block') {
                     alertText.style.display = 'none';
                 }
-                cell.classList.add('clicked'); 
+                cell.classList.add('clicked');
             });
         });
 
@@ -357,7 +398,7 @@
         const input = document.getElementById('datepicker');
         const alertText = document.querySelector('.alert');
 
-        submitButton.addEventListener('click', function() {
+        submitButton.addEventListener('click', function () {
             if (input.value === '') {
                 alertText.style.display = 'block';
             } else {
@@ -367,13 +408,12 @@
             }
         });
 
-        document.querySelector('.mask').addEventListener('click', function() {
-            input.value = '';
-            
+        $('.btn_close_x, .mask').click(function () {
+            $('#datepicker').val('');
         });
-       
+
     </script>
-    
+
 </body>
 
 </html>
