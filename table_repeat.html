@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="oxxo.studio">
+    <meta name="copyright" content="oxxo.studio">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://wellness.suntory.com.tw/js/jquery-3.6.0.min.js"></script>
+    <title>i++</title>
+
+
+
+</head>
+
+<body>
+        <table class="calender_table">
+            <tr class="weeklabel">
+                <th class="sun">日</th>
+                <th>一</th>
+                <th>二</th>
+                <th>三</th>
+                <th>四</th>
+                <th>五</th>
+                <th class="sat">六</th>
+            </tr>
+            <tr class="no1">
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+        </table>
+
+        <script>
+            const table = document.querySelector('.calender_table');
+
+for (let i = 0; i < 4; i++) {
+const newRow = document.createElement('tr');
+newRow.className = 'number';
+
+for (let j = 0; j < 7; j++) {
+    const newCell = document.createElement('td');
+    newRow.appendChild(newCell);
+}
+
+table.appendChild(newRow);
+}
+        </script>
+</body>
+
+</html>

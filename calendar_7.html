@@ -254,7 +254,7 @@
     <div class="mask"></div>
     <div class="mask_in">
         <div class="btn_close_x"></div>
-        <input type="text" id="datepicker" class="" style="display: block;">
+        <input type="text" id="datepicker" class="" style="display: none;">
         <div class="alert">
             <p>請點選日期</p>
         </div>
@@ -267,51 +267,6 @@
                 <th>四</th>
                 <th>五</th>
                 <th class="sat">六</th>
-            </tr>
-            <tr class="no1">
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-            </tr>
-            <tr class="number">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr class="number">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr class="number">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr class="number">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
             </tr>
         </table>
         <div id="submit" class="submit">確 定</div>
@@ -335,12 +290,33 @@
     </script>
 
     <script>
+        //table tr td for迴圈
+        const table = document.querySelector('.calender_table');
+        //除星期外，固定第2個tr內容
+        const newRow2 = document.createElement('tr');
+        newRow2.className = 'no1';
+        for (let j = 0; j < 7; j++) {
+            const newCell2 = document.createElement('td');
+            newCell2.textContent = '-';
+            newRow2.appendChild(newCell2);
+        }
+        table.appendChild(newRow2);
+        //4個會加上日期的tr內容
+        const newRow = document.createElement('tr');
+        for (let i = 0; i < 4; i++) {
+            const newRow = document.createElement('tr');
+            newRow.className = 'number';
+            for (let j = 0; j < 7; j++) {
+                const newCell = document.createElement('td');
+                newRow.appendChild(newCell);
+            }
+            table.appendChild(newRow);
+        }
+
         const cells = document.querySelectorAll('tr.number td');
         const targetDate = new Date('2024-04-10');
-
         const dayOfWeekIndex = targetDate.getDay();
         const today = new Date();
-
         const minTargetDate = new Date(today);
         minTargetDate.setDate(today.getDate() + 2);
 
@@ -408,8 +384,8 @@
             }
         });
 
-        document.querySelectorAll('.btn_close_x, .mask').forEach(function(element) {
-            element.addEventListener('click', function() {
+        document.querySelectorAll('.btn_close_x, .mask').forEach(function (element) {
+            element.addEventListener('click', function () {
                 document.getElementById('datepicker').value = '';
             });
         });
