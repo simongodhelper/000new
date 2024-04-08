@@ -43,7 +43,6 @@
             font-size: 22px;
             width: 140px;
             text-align: center;
-            text-indent: 7px;
             font-weight: bold;
             margin-top: 25px !important;
             margin: auto;
@@ -100,7 +99,6 @@
 
         .calender_table td {
             background: #F4F4F4;
-            color: #0072EF;
             line-height: 60px;
             font-size: 16px;
             text-align: center;
@@ -120,6 +118,10 @@
             background: #6688DD;
         }
 
+        .calender_table .number {
+            color: #222;
+        }
+
         .calender_table td.clicked,
         .calender_table td.clicked:hover {
             background: #0072EF;
@@ -128,6 +130,7 @@
 
         .calender_table .date {
             cursor: pointer;
+            color: #0072EF;
         }
 
         .calender_table .date:hover {
@@ -251,10 +254,12 @@
 
 <body>
     <button type="button" id="calendar" class="date_change">預定配達日期變更</button>
+    <button type="button" id="calendar" class="date_change">預定配達日期變更</button>
+    <button type="button" id="calendar" class="date_change">預定配達日期變更</button>
     <div class="mask"></div>
     <div class="mask_in">
         <div class="btn_close_x"></div>
-        <input type="text" id="datepicker" class="" style="display: none;">
+        <input type="text" id="datepicker" style="display: none;">
         <div class="alert">
             <p>請點選日期</p>
         </div>
@@ -274,7 +279,7 @@
 
     <script>
         $('document').ready(function () {
-            $('#calendar').click(function () {
+            $('#calendar, .date_change').click(function () {
                 $('.mask, .mask_in').addClass('d_b');
             });
             $('.mask, .btn_close_x').click(function () {
@@ -286,10 +291,12 @@
                     $('.alert').css('display', 'none');
                 }
             });
+
         });
     </script>
 
     <script>
+
         //table tr td for迴圈
         const table = document.querySelector('.calender_table');
         //除星期外，固定第2個tr內容
@@ -314,7 +321,7 @@
         }
 
         const cells = document.querySelectorAll('tr.number td');
-        const targetDate = new Date('2024-04-10');
+        const targetDate = new Date('2024-04-10');//D day
         const dayOfWeekIndex = targetDate.getDay();
         const today = new Date();
         const minTargetDate = new Date(today);
@@ -350,12 +357,10 @@
 
             if (currentDate <= minTargetDate) {
                 cell.textContent = '-';
-                cell.style.color = '#222';
             } else {
                 if (index >= dayOfWeekIndex - 7 && index < dayOfWeekIndex + 15) {
                     if (index < dayOfWeekIndex) {
                         cell.textContent = '-';
-                        cell.style.color = '#222';
                     } else {
                         cell.textContent = month + '/' + day;
                         cell.classList.add('date');
@@ -365,7 +370,6 @@
                     }
                 } else {
                     cell.textContent = '-';
-                    cell.style.color = '#222';
                 }
             }
         });
